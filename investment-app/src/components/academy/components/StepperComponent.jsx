@@ -1,40 +1,32 @@
-import React from 'react';
+import React from "react";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
-import StepButton from "@material-ui/core/StepButton";
+import StepLabel from "@material-ui/core/StepLabel";
+import Button from "@material-ui/core/Button";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 
-function getSteps() {
-    return [
-        "What are assets, stocks and bonds?",
-        "What are indexes and funds?",
-        "How do you read financial statements?",
-        "How do you perform fundamental analysis?",
-        "How do you build a portfolio?",
-    ];
-}
-
-const StepperComponent = () => {
-
-    const [activeStep, setActiveStep] = React.useState(0);
-    const steps = getSteps();
-
-    const handleStep = (step) => () => {
-        setActiveStep(step);
-    };
+const StepperComponent = (props) => {
 
     return (
-        <>
-            <Stepper nonLinear activeStep={activeStep} orientation="vertical">
-                {steps.map((label, index) => (
+        <div>
+            <Stepper activeStep={props.activeStep} orientation="vertical">
+                {props.steps.map((label, index) => (
                     <Step key={label}>
-                        <StepButton onClick={handleStep(index)}>
-                            {label}
-                        </StepButton>
+                        <StepLabel>{label}</StepLabel>
                     </Step>
                 ))}
             </Stepper>
-        </>
+            {props.activeStep === props.steps.length && (
+                <Paper square elevation={0}>
+                    <Typography>
+                        All steps completed - you&apos;re finished
+                    </Typography>
+                    <Button onClick={props.handleReset}>Reset</Button>
+                </Paper>
+            )}
+        </div>
     );
-}
+};
 
 export default StepperComponent;
