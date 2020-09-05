@@ -36,6 +36,7 @@ function getSteps() {
 const AcademyContainer = () => {
     const [activeStep, setActiveStep] = React.useState(0);
     const [show, setShow] = React.useState(false);
+    const [article, setArticle] = React.useState("");
 
     const steps = getSteps();
 
@@ -55,15 +56,20 @@ const AcademyContainer = () => {
         setShow(false);
     };
 
+    const handleStep = (article) => {
+        setArticle(article)
+    }
+
     return (
         <>
             <StepperComponent
                 activeStep={activeStep}
                 steps={steps}
+                handleStep={handleStep}
                 handleReset={handleReset}
             />
             <div className="container">
-                <ArticleContainer/>
+                <ArticleContainer article={article}/>
                 <div className="mt-4">
                     <StepperButtonComponent
                         activeStep={activeStep}

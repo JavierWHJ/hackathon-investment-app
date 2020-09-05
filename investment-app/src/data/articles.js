@@ -19,22 +19,40 @@ const Articles = {
                 body:
                     "Fixed-income investments are investments in debt securities that pay a rate of return in the form of interest. Such investments are generally considered less risky than investing in equities or other asset classes.",
             },
-            // {
-            //     header:
-            //         "3. Cash or cash equivalents, such as money market funds ",
-            //     body:
-            //         "The primary advantage of cash or cash equivalent investments is their liquidity. Money held in the form of cash or cash equivalents can be easily accessed at any time.",
-            // },
-            // {
-            //     header: "4. Real estate or other tangible assets",
-            //     body:
-            //         "Real estate and other physical assets are considered an asset class that offers protection against inflation. The tangible nature of such assets also leads to them being considered as more of a “real” asset. In that respect, they differ from assets that exist only in the form of financial instruments, such as derivatives.",
-            // },
-            // {
-            //     header: "5. Futures and other financial derivatives",
-            //     body:
-            //         "This category includes futures contracts, the forex market, options, and an expanding array of financial derivatives. Derivatives are financial instruments that are based on, or derived from, an underlying asset. For example, stock options are a derivative of stocks.",
-            // },
+        ],
+    },
+    stocks: {
+        title: "What are Stocks and Shares?",
+        preface:
+            "Buying shares has historically given a better chance of making your money grow over a long period than other investments, but with that potential comes a higher risk of losses.",
+        content: [
+            {
+                header: "What are the benefits? ",
+                body:
+                    "Shares can rise in value over time and you may be able to sell them for more than you bought them, with the difference in those prices known as your capital growth. ",
+            },
+            {
+                header: "Capital Gains",
+                body:
+                    "If you buy $1,000 worth of shares and you sell them for $3,000, then your capital has grown by $2,000, prior to capital gains tax. ",
+            },
+            {
+                header: "Dividends ",
+                body:
+                    "Another way you can make money by investing in shares is through dividends. When a company makes a profit, it may choose to distribute a portion to its shareholders through dividend payments. Companies are not obliged to pay dividends but if they decide to, they will typically announce the size of the dividend in tandem with their full or half year financial results. ",
+            },
+        ],
+    },
+    bonds: {
+        title: "What is a Bond? A way to get income & stability ",
+        preface:
+            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+        content: [
+            {
+                header: "Bond terms to know ",
+                body:
+                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+            },
         ],
     },
 };
