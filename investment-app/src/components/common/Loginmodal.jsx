@@ -31,7 +31,7 @@ const Loginmodal = () => {
                                         <Button class='btn btn-primary btn-block'>Sign Up</Button>
                                     </div>
                                     <div class='text-center mb-3'>
-                                    <Button class='btn btn- btn-block'>Log In</Button>
+                                    <Button class='btn btn-primary btn-block'>Log In</Button>
                                     </div>
                                 </form>
                             </div>
