@@ -18,9 +18,7 @@ const ProfileSelection = () => {
     const options = getOptions(questionList, message);
 
     const [show, setShow] = React.useState(false);
-
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     return (
         
@@ -61,6 +59,8 @@ const ProfileSelection = () => {
             </Row>
             </Container>
 
+
+
             <Modal show={show} onHide={handleClose}>
             <Modal.Header>
                 <Modal.Title>Congrats!</Modal.Title>
@@ -69,7 +69,6 @@ const ProfileSelection = () => {
             <Modal.Footer>
 
                 {/* TO CHANGE */}
-
                 <Button href='/portfolio' block>
                 Start Investing
                 </Button>

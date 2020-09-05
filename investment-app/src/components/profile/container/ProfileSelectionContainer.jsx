@@ -1,12 +1,13 @@
 import React from 'react'
 import ProfileSelection from '../components/ProfileSelection'
-import ProfileModal from '../components/ProfileModal'
+import ProfileHeader from '../components/ProfileHeader';
 
 const ProfileSelectionContainer = () => {
     return (
         <div>
+            {/* <ProfileHeader/> */}
+            <br></br>
             <ProfileSelection/>
-            {/* <ProfileModal/> */}
         </div>
     );
 }
