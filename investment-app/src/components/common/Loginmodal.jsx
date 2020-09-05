@@ -6,12 +6,20 @@ const Loginmodal = () => {
     const [show, setShow] = useState(false);
     const [login, setStatus] = useState(false);
     const [namefield, setName] = useState("");
-    const [emailfield, setEmail] = useState("");
+    const [emailfield, setEmail] = useState(""); 
+    const [user, setUser] = useState(true);
+    const [fieldcheck, setCheck] = useState(true);
+    const [emailcheck, setEmailcheck] = useState(true);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
     const postSignup = async () => {
+        if (emailfield == "" || namefield ==""){
+            setCheck(false);
+            return; 
+        } else {
+            setCheck(true);
+        }
         await axios({
             method: 'post',
             url: 'http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/user', 
@@ -24,8 +32,23 @@ const Loginmodal = () => {
     }
 
     const getLogin = async () => {
-            await axios.get('http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/user/' + emailfield)
-            .then(res => console.log(res)).then(handleClose)
+        if (emailfield == "" || namefield == ""){
+            setCheck(false);
+            return;
+        } else{
+            setCheck(true);
+        }
+        const response = await axios.get('http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/user/' + emailfield);
+        console.log(response);
+        const data = response.data;
+        if (data.result == "No such email"){
+            setEmailcheck(false);
+            return
+        } else {
+            setEmailcheck(true);
+            setShow(false);
+        } 
+            
     };
 
     return (
@@ -56,6 +79,13 @@ const Loginmodal = () => {
                                     </div>
                                 </form>
                             </div>
+                        </div>
+                        <div class="alert alert-danger" role="alert" hidden={fieldcheck}>
+                            Please fill up both Email and Name fields
+                        </div>
+
+                        <div class="alert alert-warning" role="alert" hidden={emailcheck}>
+                            User does not exist
                         </div>
                     </Modal.Body>
                 
