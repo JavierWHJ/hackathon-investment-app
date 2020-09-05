@@ -6,6 +6,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { Modal } from "react-bootstrap";
 import ArticleContainer from "./ArticleContainer";
+import { useRouter } from "next/router";
 
 
 function getSteps() {
@@ -34,6 +35,8 @@ function getSteps() {
 }
 
 const AcademyContainer = () => {
+    const router = useRouter();
+
     const [activeStep, setActiveStep] = React.useState(0);
     const [show, setShow] = React.useState(false);
     const [article, setArticle] = React.useState("");
@@ -53,6 +56,7 @@ const AcademyContainer = () => {
 
     const handleReset = () => {
         setShow(false);
+        router.push("/");
     };
 
     const handleStep = (article) => {
@@ -66,8 +70,8 @@ const AcademyContainer = () => {
                 steps={steps}
                 handleStep={handleStep}
             />
-            <div className="container">
-                <ArticleContainer article={article}/>
+            <div className="container mb-5">
+                <ArticleContainer article={article} />
                 <div className="mt-4">
                     <StepperButtonComponent
                         activeStep={activeStep}
@@ -79,12 +83,14 @@ const AcademyContainer = () => {
                 </div>
                 <Modal show={show} onHide={handleClose} centered>
                     {activeStep === steps.length - 1 && (
-                        <Modal.Body>
+                        <Modal.Body className="p-5">
                             <Paper square elevation={0}>
                                 <Typography>
-                                    All steps completed - you&apos;re finished
+                                    Congratulations on completing P.E.A.C.H Academy!
                                 </Typography>
-                                <Button onClick={handleReset}>End Academy</Button>
+                                <Button onClick={handleReset}>
+                                    End Academy
+                                </Button>
                             </Paper>
                         </Modal.Body>
                     )}
