@@ -9,20 +9,20 @@ const StepperComponent = (props) => {
     return (
         <div>
             <Stepper activeStep={props.activeStep} orientation="vertical">
-                {props.steps.map((label, index) => (
-                    <Step key={label}>
-                        <StepLabel>{label}</StepLabel>
+                {props.steps.map((steps, index) => (
+                    <Step key={steps.step}>
+                        <StepLabel>{steps.step}</StepLabel>
                         <StepContent>
                             <ul className="pl-4">
-                                <li>
-                                    <a href="" onClick={(e) => e.preventDefault()}>hello</a>
-                                </li>
-                                <li>
-                                    <a href="" onClick={(e) => e.preventDefault()}>hello</a>
-                                </li>
-                                <li>
-                                    <a href="" onClick={(e) => e.preventDefault()}>hello</a>
-                                </li>
+                                {steps.substeps.map((sub) => {
+                                    return (
+                                        <li>
+                                            <a href="" onClick={(e) => e.preventDefault()}>
+                                                {sub}
+                                            </a>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </StepContent>
                     </Step>
