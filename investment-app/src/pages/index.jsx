@@ -10,17 +10,17 @@ const Home = () => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3 // optional, default to 1.
+      items: 4,
+      slidesToSlide: 2 // optional, default to 1.
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 3,
       slidesToSlide: 2 // optional, default to 1.
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1,
+      items: 3,
       slidesToSlide: 1 // optional, default to 1.
     }
   };
@@ -52,28 +52,34 @@ const Home = () => {
       </div>
 
       <div className={styles.carousel}>
+
+        <div className={styles.carousel_title}>
+          NEWS
+        </div>
+
         <Carousel
-          swipeable={false}
+          swipeable={true}
           draggable={false}
           showDots={true}
           responsive={responsive}
           ssr={true} // means to render carousel on server-side.
           infinite={true}
           keyBoardControl={true}
-          customTransition="all .5"
+          customTransition="transform 300ms ease-in-out"
           transitionDuration={500}
           containerClass="carousel-container"
           removeArrowOnDeviceType={["tablet", "mobile"]}
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px"
         >
-          <div className={styles.title2}>
-            NEWS
-          </div>
-          <div>News 1</div>
-          <div>News 1</div>
-          <div>News 3</div>
-          <div>News 4</div>
+          <div className={styles.card}>News 1</div>
+          <div className={styles.card}>News 2</div>
+          <div className={styles.card}>News 3</div>
+          <div className={styles.card}>News 4</div>
+          <div className={styles.card}>News 5</div>
+          <div className={styles.card}>News 6</div>
+          <div className={styles.card}>News 7</div>
+          <div className={styles.card}>News 8</div>
         </Carousel>
       </div>
     </Layout >

@@ -1,5 +1,5 @@
 .container1 {
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,7 @@
 
 .center {
   padding: 5rem 0;
+  padding-bottom: 7rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -90,24 +91,23 @@
 }
 
 .carousel {
-  min-height: 5vh;
+  min-height: 30vh;
   padding: 0 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
 }
 
-.title2 {
+.carousel_title {
   font-size: 2rem;
   display: flex;
   flex-direction: column;
 }
 
-// legacy assets below
-
 .card {
+  min-height: 40vh;
   margin: 1rem;
   flex-basis: 45%;
   padding: 1.5rem;
@@ -118,6 +118,8 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
+
+// legacy assets below
 
 .card:hover,
 .card:focus,
