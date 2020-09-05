@@ -3,7 +3,6 @@ import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import StepContent from "@material-ui/core/StepContent";
-import { Button } from "react-bootstrap";
 
 const StepperComponent = (props) => {
 
@@ -23,7 +22,12 @@ const StepperComponent = (props) => {
                                 {steps.substeps.map((sub) => {
                                     return (
                                         <li>
-                                            <a href="" key={sub} data-id={sub} onClick={handleStepClick}>
+                                            <a
+                                                href=""
+                                                key={sub}
+                                                data-id={sub}
+                                                onClick={handleStepClick}
+                                            >
                                                 {sub}
                                             </a>
                                         </li>
