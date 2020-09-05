@@ -1,7 +1,8 @@
 import React from "react";
 import Layout from "../../components/common/Layout";
 import { Container, Row, Col } from "react-bootstrap";
-import MarketChartContainer from "../../components/portfolio/containers/MarketChartContainer";
+import MarketChartComponent from "../../components/portfolio/components/MarketChartComponent";
+import MarketDataComponent from "../../components/portfolio/components/MarketDataComponent";
 
 const Portfolio = () => {
     return (
@@ -9,15 +10,10 @@ const Portfolio = () => {
             <Container fluid>
                 <Row>
                   <Col xs={8}>
-                    <MarketChartContainer />
+                    <MarketChartComponent />
                   </Col>
                   <Col>
-                    hello
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <MarketChartContainer/>
+                    <MarketDataComponent/>
                   </Col>
                 </Row>
             </Container>
