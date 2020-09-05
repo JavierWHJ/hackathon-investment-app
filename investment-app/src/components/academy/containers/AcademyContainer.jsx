@@ -56,7 +56,7 @@ const AcademyContainer = () => {
 
     const handleReset = () => {
         setShow(false);
-        router.push("/");
+        router.push("/portfolio");
     };
 
     const handleStep = (article) => {
@@ -87,6 +87,7 @@ const AcademyContainer = () => {
                             <Paper square elevation={0}>
                                 <Typography>
                                     Congratulations on completing P.E.A.R Academy!
+                                    Practice what you learn in our Virtual Portfolio!
                                 </Typography>
                                 <Button className="mt-5" onClick={handleReset}>
                                     End Academy

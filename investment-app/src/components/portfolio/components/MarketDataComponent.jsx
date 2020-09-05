@@ -5,7 +5,7 @@ const MarketDataComponent = () => {
     return (
         <div>
             <TradingViewEmbed
-                widgetType={widgetType.MARKET_DATA}
+                widgetType={widgetType.STOCK_MARKET}
                 widgetConfig={{
                     colorTheme: "light",
                     symbol: "BITMEX:XBTUSD",

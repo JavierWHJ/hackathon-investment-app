@@ -1,21 +1,31 @@
 import React from "react";
 import Layout from "../../components/common/Layout";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
 import MarketChartComponent from "../../components/portfolio/components/MarketChartComponent";
 import MarketDataComponent from "../../components/portfolio/components/MarketDataComponent";
+import WatchListContainer from "../../components/portfolio/containers/WatchListContainer";
 
 const Portfolio = () => {
     return (
         <Layout>
             <Container fluid>
-                <Row>
-                  <Col xs={8}>
-                    <MarketChartComponent />
-                  </Col>
-                  <Col>
-                    <MarketDataComponent/>
-                  </Col>
-                </Row>
+                <Tabs
+                    defaultActiveKey="watchlist"
+                    id="uncontrolled-tab-example"
+                >
+                    <Tab eventKey="watchlist" title="Watchlist">
+                        <Row>
+                            <Col xs={8}>
+                                <MarketChartComponent />
+                            </Col>
+                            <Col>
+                                <WatchListContainer />
+                            </Col>
+                        </Row>
+                        <MarketDataComponent />
+                    </Tab>
+                    <Tab eventKey="holdings" title="Holdings"></Tab>
+                </Tabs>
             </Container>
         </Layout>
     );
