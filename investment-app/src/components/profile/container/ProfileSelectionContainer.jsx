@@ -5,7 +5,7 @@ import ProfileHeader from '../components/ProfileHeader';
 const ProfileSelectionContainer = () => {
     return (
         <div>
-            {/* <ProfileHeader/> */}
+            <ProfileHeader/>
             <br></br>
             <ProfileSelection/>
         </div>

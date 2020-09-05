@@ -13,9 +13,6 @@ export default function Profile() {
                 <link rel="icon" href="/pear.svg" />
             </Head>
             <main className={styles.center}>
-            {/* <h1>
-                How much do you know about investing?
-            </h1> */}
                 <ProfileSelectionContainer/>
             </main>
             
