@@ -1,11 +1,39 @@
 import React, {useState} from 'react'
 import {Modal, Button, Tabs} from 'react-bootstrap'
+import axios from 'axios';
 
 const Loginmodal = () => {
     const [show, setShow] = useState(false);
+    const [login, setStatus] = useState(false);
+    const [namefield, setName] = useState("");
+    const [emailfield, setEmail] = useState("");
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const postSignup = async () => {
+        await axios({
+            method: 'post',
+            url: 'http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/user', 
+            headers: {},
+            data: { 
+                email:{emailfield},
+                name:{namefield},
+            }
+        }).then(res => console.log(res));
+    }
+
+    const getLogin = async () => {
+            await axios.get('http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/user',
+            {params: {
+                email:{namefield}
+            }}).then(res => console.log(res))
+            // fetch('http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/user',{
+            //     method: 'GET',
+            //     body: {email:{emailfield}}
+            // }
+            // ).then(res => console.log(res));
+    };
 
     return (
         <div>
@@ -22,16 +50,16 @@ const Loginmodal = () => {
                             <div>
                                 <form>
                                     <div class='form-group'>
-                                        <div class='email'><input placeholder='Email Address' name='email' type='email' id='email' class='s2 form-control'></input></div>
+                                        <div class='email'><input placeholder='Email Address' name='email' type='email' id='email' class='s2 form-control' onChange={e =>setName(e.target.value)}></input></div>
                                     </div>
                                     <div class='form-group'>
-                                        <div class='name'><input placeholder='Name' name='name' type='text' id='text' class='s2 form-control'></input></div>
+                                        <div class='name'><input placeholder='Name' name='name' type='text' id='text' class='s2 form-control' onChange={e =>setEmail(e.target.value)}></input></div>
                                     </div>
                                     <div class='text-center mb-3'>
-                                        <Button class='btn btn-primary btn-block'>Sign Up</Button>
+                                        <Button class='btn btn-primary btn-block'  onClick={postSignup}>Sign Up</Button>
                                     </div>
                                     <div class='text-center mb-3'>
-                                    <Button class='btn btn-primary btn-block'>Log In</Button>
+                                    <Button class='btn btn-primary btn-block' onClick={getLogin} >Log In</Button>
                                     </div>
                                 </form>
                             </div>
