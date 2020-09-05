@@ -12,6 +12,24 @@ const ArticleContainer = (props) => {
                 return Articles.stocks;
             case "bonds":
                 return Articles.bonds;
+            case "indexes":
+                return Articles.indexes;
+            case "funds":
+                return Articles.funds;
+            case "income":
+                return Articles.income;
+            case "balance":
+                return Articles.balance;
+            case "cash":
+                return Articles.cash;
+            case "financial":
+                return Articles.financial;
+            case "relative":
+                return Articles.relative;
+            case "goal-setting":
+                return Articles.goal;
+            case "diversification":
+                return Articles.diversification;
             default:
                 return Articles.asset;
         }

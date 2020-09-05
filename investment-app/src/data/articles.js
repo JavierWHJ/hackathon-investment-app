@@ -55,6 +55,114 @@ const Articles = {
             },
         ],
     },
+    indexes: {
+        title: "What is a Bond? A way to get income & stability ",
+        preface:
+            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+        content: [
+            {
+                header: "Bond terms to know ",
+                body:
+                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+            },
+        ],
+    },
+    funds: {
+        title: "What is a Bond? A way to get income & stability ",
+        preface:
+            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+        content: [
+            {
+                header: "Bond terms to know ",
+                body:
+                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+            },
+        ],
+    },
+    income: {
+        title: "What is a Bond? A way to get income & stability ",
+        preface:
+            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+        content: [
+            {
+                header: "Bond terms to know ",
+                body:
+                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+            },
+        ],
+    },
+    balance: {
+        title: "What is a Bond? A way to get income & stability ",
+        preface:
+            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+        content: [
+            {
+                header: "Bond terms to know ",
+                body:
+                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+            },
+        ],
+    },
+    cash: {
+        title: "What is a Bond? A way to get income & stability ",
+        preface:
+            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+        content: [
+            {
+                header: "Bond terms to know ",
+                body:
+                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+            },
+        ],
+    },
+    financial: {
+        title: "What is a Bond? A way to get income & stability ",
+        preface:
+            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+        content: [
+            {
+                header: "Bond terms to know ",
+                body:
+                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+            },
+        ],
+    },
+    relative: {
+        title: "What is a Bond? A way to get income & stability ",
+        preface:
+            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+        content: [
+            {
+                header: "Bond terms to know ",
+                body:
+                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+            },
+        ],
+    },
+    goal: {
+        title: "What is a GOAL? A way to get income & stability ",
+        preface:
+            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+        content: [
+            {
+                header: "Bond terms to know ",
+                body:
+                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+            },
+        ],
+    },
+    diversification: {
+        title: "What is a Bond? A way to get income & stability ",
+        preface:
+            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+        content: [
+            {
+                header: "Bond terms to know ",
+                body:
+                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+            },
+        ],
+    },
 };
 
 export default Articles;
