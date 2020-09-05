@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <>
             <Navbar bg="light" variant="light" expand="lg">
-                <Navbar.Brand href="#">
+                <Navbar.Brand href="/">
                     <img
                         src="/pear.svg"
                         width="30"
@@ -17,10 +17,10 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Academy</Nav.Link>
-                        <Nav.Link href="#pricing">Financials</Nav.Link>
-                        <Nav.Link href="#pricing">Portfolio</Nav.Link>
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/academy">Academy</Nav.Link>
+                        <Nav.Link href="/financials">Financials</Nav.Link>
+                        <Nav.Link href="/portfolio">Portfolio</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
