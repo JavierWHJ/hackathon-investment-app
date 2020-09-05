@@ -21,7 +21,6 @@ const ProfileSelection = () => {
     const handleClose = () => setShow(false);
 
     return (
-        
         <div>
             <Container>
                 <Row>
@@ -31,12 +30,12 @@ const ProfileSelection = () => {
                 <CardDeck>
                     <Card style={{ width: '15rem' }}>
                         <Card.Body>
-                            <Button href="/academy" block>Not at all</Button>
+                            <Button onClick={() => setShow(true)} block>Not at all</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '15rem' }}>
                         <Card.Body>
-                            <Button href="/academy" block>A little</Button>
+                            <Button onClick={() => setShow(true)} block>A little</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '15rem' }}>
@@ -59,19 +58,26 @@ const ProfileSelection = () => {
             </Row>
             </Container>
 
-
-
             <Modal show={show} onHide={handleClose}>
             <Modal.Header>
-                <Modal.Title>Congrats!</Modal.Title>
+                {message<3
+                ? <Modal.Title>No Worries!</Modal.Title>
+                : <Modal.Title>Congrats!</Modal.Title>}
             </Modal.Header>
-            <Modal.Body>You know your stuff! Try out our investing simulation to get a feel on actual investing.</Modal.Body>
+
+            {message<3
+                ? <Modal.Body>Learn more about investing in our Academy.</Modal.Body>
+                : <Modal.Body>You know your stuff! Try out our investing simulation to get a feel on actual investing.</Modal.Body>}
+            
             <Modal.Footer>
 
                 {/* TO CHANGE */}
-                <Button href='/portfolio' block>
-                Start Investing
-                </Button>
+
+                {message<3
+                ? <Button href='/academy' block>Start Learning</Button>
+                : <Button href='/portfolio' block>Start Investing</Button>
+            }
+
             </Modal.Footer>
             </Modal>
         </div>
