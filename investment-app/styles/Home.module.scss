@@ -1,4 +1,4 @@
-.container {
+.container1 {
   min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
@@ -7,7 +7,11 @@
   align-items: center;
 }
 
-.main {
+.header {
+  padding: 2.5rem;
+}
+
+.center {
   padding: 5rem 0;
   flex: 1;
   display: flex;
@@ -71,6 +75,10 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
+.main_title {
+  font-size: 2rem;
+}
+
 .grid {
   display: flex;
   align-items: center;
@@ -78,8 +86,28 @@
   flex-wrap: wrap;
 
   max-width: 800px;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
+
+.container2 {
+  min-height: 5vh;
+  padding: 0 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.title2 {
+  font-size: 2rem;
+}
+
+.multi_carousel {
+
+}
+
+// legacy assets below
 
 .card {
   margin: 1rem;
