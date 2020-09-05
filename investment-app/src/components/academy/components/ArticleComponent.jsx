@@ -10,8 +10,8 @@ const ArticleComponent = (props) => {
                 width="560"
                 height="315"
                 src={props.video}
-                frameborder="0"
-                allowfullscreen
+                frameBorder="0"
+                allowFullScreen
             ></iframe> : ''
             }
             
