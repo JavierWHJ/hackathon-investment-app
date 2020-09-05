@@ -205,7 +205,7 @@ const Articles = {
             {
                 header: "3. Efficiency: Asset Turnover Ratio",
                 body:
-                    "The quick ratio, also referred as the “acid test ratio” or the “quick assets ratio”, this ratio is a gauge of the short term liquidity of a firm. The quick ratio is helpful in measuring a company’s short term debts with its most liquid assets. ",
+                    "The asset turnover ratio is a gauge of how efficient the company is at using its assets to generate revenue. The higher the asset turnover ratio, the more revenue the company makes per dollar of assets it has, and the more efficient the company.",
             },
             {
                 header: "4. Profitability: Net Profit Margin ",
@@ -215,7 +215,7 @@ const Articles = {
             {
                 header: "5. Market Value: P/E Ratio ",
                 body:
-                    "The P/E ratio is a measure of how much you are paying for each dollar of earnings the company generates. This indicates how expensive the company's shares are. A high P/E ratio could mean that tinvestors expect the company's earnings to grow strongly in the future, whereas a low P/E ratio ",
+                    "The P/E ratio is a measure of how much you are paying for each dollar of earnings the company generates. This indicates how expensive the company's shares are. A high P/E ratio could mean that tinvestors expect the company's earnings to grow strongly in the future, whereas a low P/E ratio could mean that the shares are cheap, or that investors expect the company's earnings to decline",
             },
         ],
     },
