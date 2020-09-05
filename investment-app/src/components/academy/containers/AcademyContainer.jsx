@@ -1,6 +1,11 @@
 import React from "react";
 import StepperComponent from "../components/StepperComponent";
 import StepperButtonComponent from "../components/StepperButtonComponent";
+import Button from "@material-ui/core/Button";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+import { Modal } from "react-bootstrap";
+
 
 function getSteps() {
     return [
@@ -14,7 +19,12 @@ function getSteps() {
 
 const AcademyContainer = () => {
     const [activeStep, setActiveStep] = React.useState(0);
+    const [show, setShow] = React.useState(false);
+
     const steps = getSteps();
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -26,6 +36,7 @@ const AcademyContainer = () => {
 
     const handleReset = () => {
         setActiveStep(0);
+        setShow(false);
     };
 
     return (
@@ -67,14 +78,27 @@ const AcademyContainer = () => {
                 is also considered a component of personal finance including
                 checking and savings accounts and online or mobile payment
                 services like PayPal and Venmo.
-                <div>
+                <div className="mt-4">
                     <StepperButtonComponent
                         activeStep={activeStep}
                         steps={steps}
                         handleNext={handleNext}
                         handleBack={handleBack}
+                        handleShow={handleShow}
                     />
                 </div>
+                <Modal show={show} onHide={handleClose}>
+                    {activeStep === steps.length - 1 && (
+                        <Modal.Body>
+                            <Paper square elevation={0}>
+                                <Typography>
+                                    All steps completed - you&apos;re finished
+                                </Typography>
+                                <Button onClick={handleReset}>Reset</Button>
+                            </Paper>
+                        </Modal.Body>
+                    )}
+                </Modal>
             </div>
         </>
     );
