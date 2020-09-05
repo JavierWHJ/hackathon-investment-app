@@ -10,26 +10,24 @@ const Loginmodal = () => {
     return (
         <div>
             <Button variant="primary" onClick={handleShow}>
-            Are y'all ready kids?
+                Are y'all ready kids?
             </Button>
 
             <Modal show={show} onHide={handleClose}>
-                <Modal.Dialog>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Login</Modal.Title>
-                    </Modal.Header>
-
-                    <Modal.Body>
-                        <form>
-                            <div><input placeholder='Email Address' name='email' type='email' id='email'></input></div>
-                            <div><input placeholder='Name' name='name' type='text' id='text'></input></div>
-                        </form>
+                <Modal.Header closeButton>
+                    <Modal.Title>Login</Modal.Title>
+                </Modal.Header>
+                    
+                <form>
+                    <Modal.Body>   
+                        <div><input placeholder='Email Address' name='email' type='email' id='email'></input></div>
+                        <div><input placeholder='Name' name='name' type='text' id='text'></input></div>
                     </Modal.Body>
 
                     <Modal.Footer>
                         <Button variant="primary">Login</Button>
                     </Modal.Footer>
-                </Modal.Dialog> 
+                </form>
             </Modal>
         </div>
     )
