@@ -5,7 +5,7 @@ import styles from './Header.module.scss'
 const Header = () => {
     return (
         <>
-            <Navbar bg="light" variant="primary" expand="lg" className={styles.header}>
+            <Navbar bg="light" expand="lg" className={styles.header}>
                 <Navbar.Brand href="/">
                     <img
                         src="/pear.svg"
