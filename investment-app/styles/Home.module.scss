@@ -89,7 +89,7 @@
   margin-top: 1rem;
 }
 
-.container2 {
+.carousel {
   min-height: 5vh;
   padding: 0 2rem;
   padding-bottom: 2rem;
@@ -101,10 +101,8 @@
 
 .title2 {
   font-size: 2rem;
-}
-
-.multi_carousel {
-
+  display: flex;
+  flex-direction: column;
 }
 
 // legacy assets below
