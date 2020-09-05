@@ -86,9 +86,9 @@ const AcademyContainer = () => {
                         <Modal.Body className="p-5">
                             <Paper square elevation={0}>
                                 <Typography>
-                                    Congratulations on completing P.E.A.C.H Academy!
+                                    Congratulations on completing P.E.A.R Academy!
                                 </Typography>
-                                <Button onClick={handleReset}>
+                                <Button className="mt-5" onClick={handleReset}>
                                     End Academy
                                 </Button>
                             </Paper>

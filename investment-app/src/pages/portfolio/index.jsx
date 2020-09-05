@@ -1,28 +1,26 @@
 import React from "react";
 import Layout from "../../components/common/Layout";
-import { TradingViewEmbed, widgetType } from "react-tradingview-embed";
+import { Container, Row, Col } from "react-bootstrap";
+import MarketChartContainer from "../../components/portfolio/containers/MarketChartContainer";
 
 const Portfolio = () => {
     return (
         <Layout>
-            <div className="container">
-                <TradingViewEmbed
-                    widgetType={widgetType.ADVANCED_CHART}
-                    widgetConfig={{
-                        colorTheme: "light",
-                        symbol: "BITMEX:XBTUSD",
-                        width: "100%",
-                    }}
-                />
-                <TradingViewEmbed
-                    widgetType={widgetType.MARKET_OVERVIEW}
-                    widgetConfig={{
-                        colorTheme: "light",
-                        symbol: "BITMEX:XBTUSD",
-                        width: "100%",
-                    }}
-                />
-            </div>
+            <Container fluid>
+                <Row>
+                  <Col xs={8}>
+                    <MarketChartContainer />
+                  </Col>
+                  <Col>
+                    hello
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <MarketChartContainer/>
+                  </Col>
+                </Row>
+            </Container>
         </Layout>
     );
 };
