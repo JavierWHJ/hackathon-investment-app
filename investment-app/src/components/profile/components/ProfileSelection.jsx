@@ -1,6 +1,6 @@
 import React from 'react'
 import {CardDeck, Card} from 'react-bootstrap'
-import {Container, Row} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 import {Modal, Button} from 'react-bootstrap'
 import styles from '../../../../styles/Home.module.scss'
 
@@ -24,24 +24,28 @@ const ProfileSelection = () => {
 
     return (
         <div>
-            <Container>
+            <Container >
                 <Row>
-                    <h1 className={styles.main_title}>{options}</h1>
+                    <Col style={{display: 'flex', alignItems: 'center',justifyContent: 'center', flexDirection:'column'}}>
+                        <h1 className={styles.main_title} >{options}</h1></Col>
                 </Row>
             <Row>
                 <CardDeck>
-                    <Card style={{ width: '15rem' }}>
-                        <Card.Body>
+                    <Card style={{ width: '15rem' , height:'15rem'}}>
+                        <Card.Body style={{display: 'flex', alignItems: 'center',justifyContent: 'center', flexDirection:'column'}}>
+                            <img src='/forbidden.png'/> <br />
                             <Button onClick={() => setShow(true) } block>Not at all</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '15rem' }}>
-                        <Card.Body>
+                        <Card.Body style={{display: 'flex', alignItems: 'center',justifyContent: 'center', flexDirection:'column'}}>
+                            <img src='/emoji.png'/> <br />
                             <Button onClick={() => setShow(true)} block>A little</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '15rem' }}>
-                        <Card.Body>
+                        <Card.Body style={{display: 'flex', alignItems: 'center',justifyContent: 'center', flexDirection:'column'}}>
+                            <img src='/confusion.png'/> <br />
                             <Button onClick={() => 
                                 {message<3 ? 
                                 setOptions(message + 1) : 
@@ -49,8 +53,9 @@ const ProfileSelection = () => {
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '15rem' }}>
-                        <Card.Body>
-                        <Button onClick={() => 
+                        <Card.Body style={{display: 'flex', alignItems: 'center',justifyContent: 'center', flexDirection:'column'}}>
+                            <img src='/smile.png'/> <br />
+                            <Button onClick={() => 
                             {message<3 ? 
                             setOptions(message + 1) : 
                             (setShow(true), setKnowledge(true))}} block>Very</Button>
