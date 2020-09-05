@@ -21,7 +21,6 @@ const ProfileSelection = () => {
     const handleClose = () => setShow(false);
 
     const [knowledge, setKnowledge] = React.useState(false);
-    console.log(knowledge);
 
     return (
         <div>
