@@ -2,6 +2,7 @@ import Head from 'next/head'
 import {Button} from 'react-bootstrap'
 import Layout from '../components/common/Layout'
 import styles from '../../styles/Home.module.scss'
+import Loginmodal from '../components/common/Loginmodal'
 
 const Home = () => {
 
@@ -18,9 +19,10 @@ const Home = () => {
         </h1>
 
         <div className={styles.grid}>
-          <Button>
+          {/* <Button Onclick={Loginmodal}>
             Are y'all ready kids?
-          </Button>
+          </Button> */}
+          <Loginmodal />
         </div>
       </main>
     </div>
