@@ -1,10 +1,13 @@
 import React from 'react'
 import styles from './Component.module.scss';
 
-export default function Component() {
+const Component = () => {
     return (
-        <div className={styles.container}>
-            hello world
+        <div>
+            Hello World
         </div>
-    )
+    );
 }
+
+export default Component;
+
