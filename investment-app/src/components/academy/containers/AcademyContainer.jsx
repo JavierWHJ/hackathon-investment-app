@@ -52,7 +52,6 @@ const AcademyContainer = () => {
     };
 
     const handleReset = () => {
-        setActiveStep(0);
         setShow(false);
     };
 
@@ -66,7 +65,6 @@ const AcademyContainer = () => {
                 activeStep={activeStep}
                 steps={steps}
                 handleStep={handleStep}
-                handleReset={handleReset}
             />
             <div className="container">
                 <ArticleContainer article={article}/>
@@ -79,14 +77,14 @@ const AcademyContainer = () => {
                         handleShow={handleShow}
                     />
                 </div>
-                <Modal show={show} onHide={handleClose}>
+                <Modal show={show} onHide={handleClose} centered>
                     {activeStep === steps.length - 1 && (
                         <Modal.Body>
                             <Paper square elevation={0}>
                                 <Typography>
                                     All steps completed - you&apos;re finished
                                 </Typography>
-                                <Button onClick={handleReset}>Reset</Button>
+                                <Button onClick={handleReset}>End Academy</Button>
                             </Paper>
                         </Modal.Body>
                     )}
