@@ -67,7 +67,10 @@ const ProfileSelection = () => {
             </Modal.Header>
             <Modal.Body>You know your stuff! Try out our investing simulation to get a feel on actual investing.</Modal.Body>
             <Modal.Footer>
-                <Button href='/academy' block>
+
+                {/* TO CHANGE */}
+
+                <Button href='/portfolio' block>
                 Start Investing
                 </Button>
             </Modal.Footer>
