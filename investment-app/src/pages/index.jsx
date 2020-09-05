@@ -3,6 +3,7 @@ import {Button} from 'react-bootstrap'
 import styles from '../../styles/Home.module.scss'
 
 export default function Home() {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +16,7 @@ export default function Home() {
         </h1>
 
         <div className={styles.grid}>
-          <Button OnClick = {router.push('/profiling')}>
+          <Button>
             Are y'all ready kids?
           </Button>
         </div>
