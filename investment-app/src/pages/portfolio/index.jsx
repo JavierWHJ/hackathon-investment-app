@@ -14,7 +14,7 @@ const Portfolio = () => {
                     id="uncontrolled-tab-example"
                 >
                     <Tab eventKey="watchlist" title="Watchlist">
-                        <Row>
+                        <Row className="mt-3">
                             <Col xs={8}>
                                 <MarketChartComponent />
                             </Col>

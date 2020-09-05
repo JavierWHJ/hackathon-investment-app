@@ -1,4 +1,5 @@
 import React from "react";
+import { Table, Button } from "react-bootstrap";
 import WatchListComponent from "../components/WatchListComponent";
 
 const mockData = {
@@ -12,9 +13,25 @@ const mockData = {
 };
 
 const WatchListContainer = () => {
-    return mockData.watchlist.map((stock) => {
-        return <WatchListComponent stock={stock}/>;
-    })
+    return (
+        <>
+            <Table striped hover>
+                <thead>
+                    <tr>
+                        <th>Ticker</th>
+                        <th>Price</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {mockData.watchlist.map((stock) => {
+                        return <WatchListComponent stock={stock} />;
+                    })}
+                </tbody>
+            </Table>
+            <Button block className="mt-4">Add Watchlist</Button>
+        </>
+    );
 };
 
 export default WatchListContainer;

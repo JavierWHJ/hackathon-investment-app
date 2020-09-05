@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
 
 const WatchListComponent = (props) => {
     return (
-        <div>
-            {props.stock.key}
-            {props.stock.price}
-        </div>
+        <tr>
+            <td>{props.stock.key}</td>
+            <td>{props.stock.price}</td>
+            <td>Changes</td>
+        </tr>
     );
-}
+};
 
 export default WatchListComponent;
