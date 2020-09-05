@@ -43,6 +43,7 @@ const ArticleContainer = (props) => {
                 title={article.title}
                 preface={article.preface}
                 content={article.content}
+                video={article.video}
             />
         </div>
     );

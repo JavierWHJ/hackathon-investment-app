@@ -20,6 +20,7 @@ const Articles = {
                     "Fixed-income investments are investments in debt securities that pay a rate of return in the form of interest. Such investments are generally considered less risky than investing in equities or other asset classes.",
             },
         ],
+        video: "https://www.youtube.com/embed/8g8gPAqFxmM",
     },
     stocks: {
         title: "What are Stocks and Shares?",
@@ -42,6 +43,7 @@ const Articles = {
                     "Another way you can make money by investing in shares is through dividends. When a company makes a profit, it may choose to distribute a portion to its shareholders through dividend payments. Companies are not obliged to pay dividends but if they decide to, they will typically announce the size of the dividend in tandem with their full or half year financial results. ",
             },
         ],
+        video: "https://www.youtube.com/embed/fn3y1hNVgA4",
     },
     bonds: {
         title: "What is a Bond? A way to get income & stability ",
@@ -79,6 +81,7 @@ const Articles = {
                     "Bonds are issued by governments and corporations when they want to raise money. By buying a bond, you're giving the issuer a loan, and they agree to pay you back the face value of the loan on a specific date, and to pay you periodic interest payments along the way, usually twice a year. ",
             },
         ],
+        video: "https://www.youtube.com/embed/ftsNgtx2haY",
     },
     indexes: {
         title: "In Investing, What Is an Index? ",
@@ -96,6 +99,7 @@ const Articles = {
                     "Suppose we created an index to track the price of a gallon of milk. When we start tracking let's say milk costs $2.00 a gallon. The starting index value is 1. When milk goes to $2.50, our index goes to 1.25, which reflects a 25% increase in the price of milk. If milk the goes to $2.25, the index goes to 1.15. The .10 change reflects a 10% decrease in the price of milk. If you were a milk dealer you might find a milk index useful. Instead of going to the store each day to write down the prices of each competitor's milk and averaging them together, the index would provide that data for you. ",
             },
         ],
+        video: "https://www.youtube.com/embed/EQ-67udZEeg",
     },
     funds: {
         title: "What is an investment fund? ",
@@ -113,6 +117,7 @@ const Articles = {
                     "In an investment fund, each investor owns their individual shares but they don’t have any influence on where the money in the fund is invested. This is down to the investment manager, who decides which assets to buy or sell, how many and when. ",
             },
         ],
+        video: "https://www.youtube.com/embed/KKBGOVIloV0",
     },
     income: {
         title: "Understanding Income Statement components ",
