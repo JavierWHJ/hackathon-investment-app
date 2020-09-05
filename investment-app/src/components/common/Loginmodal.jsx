@@ -15,17 +15,44 @@ const Loginmodal = () => {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Login</Modal.Title>
+                    <ul class="nav nav-tabs" id="tabContent">
+                        <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
+                        <li><a href="#signup" data-toggle="tab">Sign Up</a></li>
+                    </ul>
                 </Modal.Header>
                     
-                <form>
                     <Modal.Body>   
-                        <div class='email'><input placeholder='Email Address' name='email' type='email' id='email' class='s2 form-control'></input></div>
-                        <div class='name'><input placeholder='Name' name='name' type='text' id='text' class='s2 form-control'></input></div>
-                        <Button variant="primary" class='btn btn-primary btn-block'>Login</Button>
+                        <div class='tab-content'>
+                            <div class="tab-pane active" id="login">
+                                <form>
+                                    <div class='form-group'>
+                                        <div class='email'><input placeholder='Email Address' name='email' type='email' id='email' class='s2 form-control'></input></div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <div class='name'><input placeholder='Name' name='name' type='text' id='text' class='s2 form-control'></input></div>
+                                    </div>
+                                    <div class='text-center mb-3'>
+                                        <Button class='btn btn-primary btn-block'>Login</Button>
+                                    </div>
+                                </form>
+                            </div>
+                              
+                            <div class="tab-pane" id="signup">
+                                <form>
+                                    <div class='form-group'>
+                                        <div class='email'><input placeholder='Email Address' name='email' type='email' id='email' class='s2 form-control'></input></div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <div class='name'><input placeholder='Name' name='name' type='text' id='text' class='s2 form-control'></input></div>
+                                    </div>
+                                    <div class='text-center mb-3'>
+                                        <Button class='btn btn-primary btn-block'>Sign Up</Button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </Modal.Body>
-                        <p class='text-center'>Don't have an account? Sign up</p>
-                </form>
+                
             </Modal>
         </div>
     )
