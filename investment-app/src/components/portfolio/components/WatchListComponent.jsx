@@ -5,10 +5,14 @@ const WatchListComponent = (props) => {
     const router = useRouter();
 
     return (
-        <tr key={props.stock.key} onClick={() => router.push("/portfolio/" + props.stock.key)} style={{ cursor: "pointer" }}>
-            <td>{props.stock.key}</td>
+        <tr
+            key={props.stock}
+            onClick={() => router.push("/portfolio/" + props.stock.symbol)}
+            style={{ cursor: "pointer" }}
+        >
+            <td>{props.stock.symbol}</td>
             <td>{props.stock.price}</td>
-            <td>Changes</td>
+            <td>{props.stock.percentage}</td>
         </tr>
     );
 };

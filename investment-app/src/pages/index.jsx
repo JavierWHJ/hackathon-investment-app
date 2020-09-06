@@ -26,64 +26,59 @@ const Home = () => {
   };
 
   return (
-    <Layout>
-      <div className={styles.container1}>
-        <Head>
-          <title>P.E.A.R.</title>
-          <link rel="icon" href="/pear.svg" />
-        </Head>
-        <header className={styles.header}>
-          <h1 className={styles.title}>
-            Welcome to P.E.A.R.!
-        </h1>
-        </header>
-        <div className={styles.center}>
-          <div className={styles.main_title}>
-            Want to learn how to invest?
-          </div>
+      <Layout>
+          <div className={styles.container1}>
+              <Head>
+                  <title>P.E.A.R.</title>
+                  <link rel="icon" href="/pear.svg" />
+              </Head>
+              <header className={styles.header}>
+                  <h1 className={styles.title}>Welcome to P.E.A.R.!</h1>
+              </header>
+              <div className={styles.center}>
+                  <div className={styles.main_title}>
+                      Want to learn how to invest?
+                  </div>
 
-          <div className={styles.grid}>
-            {/* <Button Onclick={Loginmodal}>
+                  <div className={styles.grid}>
+                      {/* <Button Onclick={Loginmodal}>
             Are y'all ready kids?
           </Button> */}
-            <Loginmodal />
+                      <Loginmodal button={"Are y'all ready kids?"} />
+                  </div>
+              </div>
           </div>
-        </div>
-      </div>
 
-      <div className={styles.carousel}>
+          <div className={styles.carousel}>
+              <div className={styles.carousel_title}>NEWS</div>
 
-        <div className={styles.carousel_title}>
-          NEWS
-        </div>
-
-        <Carousel
-          swipeable={true}
-          draggable={false}
-          showDots={true}
-          responsive={responsive}
-          ssr={true} // means to render carousel on server-side.
-          infinite={true}
-          keyBoardControl={true}
-          customTransition="transform 300ms ease-in-out"
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
-        >
-          <div className={styles.card}>News 1</div>
-          <div className={styles.card}>News 2</div>
-          <div className={styles.card}>News 3</div>
-          <div className={styles.card}>News 4</div>
-          <div className={styles.card}>News 5</div>
-          <div className={styles.card}>News 6</div>
-          <div className={styles.card}>News 7</div>
-          <div className={styles.card}>News 8</div>
-        </Carousel>
-      </div>
-    </Layout >
-  )
+              <Carousel
+                  swipeable={true}
+                  draggable={false}
+                  showDots={true}
+                  responsive={responsive}
+                  ssr={true} // means to render carousel on server-side.
+                  infinite={true}
+                  keyBoardControl={true}
+                  customTransition="transform 300ms ease-in-out"
+                  transitionDuration={500}
+                  containerClass="carousel-container"
+                  removeArrowOnDeviceType={["tablet", "mobile"]}
+                  dotListClass="custom-dot-list-style"
+                  itemClass="carousel-item-padding-40-px"
+              >
+                  <div className={styles.card}>News 1</div>
+                  <div className={styles.card}>News 2</div>
+                  <div className={styles.card}>News 3</div>
+                  <div className={styles.card}>News 4</div>
+                  <div className={styles.card}>News 5</div>
+                  <div className={styles.card}>News 6</div>
+                  <div className={styles.card}>News 7</div>
+                  <div className={styles.card}>News 8</div>
+              </Carousel>
+          </div>
+      </Layout>
+  );
 }
 
 

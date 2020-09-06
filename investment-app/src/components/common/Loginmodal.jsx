@@ -4,7 +4,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router'
 
-const Loginmodal = () => {
+const Loginmodal = (props) => {
     const router = useRouter()
 
     const [show, setShow] = useState(false);
@@ -62,7 +62,7 @@ const Loginmodal = () => {
     return (
         <div>
             <Button variant="primary" onClick={handleShow}>
-                Are y'all ready kids?
+                {props.button}
             </Button>
 
             <Modal show={show} onHide={handleClose}>

@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap'
 import styles from './Header.module.scss'
 import ProfileMenu from './ProfileMenu';
 
 const Header = () => {
-    
+
     return (
         <>
             <Navbar bg="light" expand="lg" className={"justify-content-between", styles.header}>
