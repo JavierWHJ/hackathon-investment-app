@@ -6,13 +6,15 @@ const Financials = () => {
 
     return (
         <Layout>
-            <div class="container d-flex justify-content-center">
-                <div>
-                    <img
+            <div className="mx-5 mt-3">
+                <div class="container d-flex justify-content-center" >
+                    <div>
+                        <img
                             src="/pear.svg"
-                            width="100"
-                            height="100"
-                    />
+                            width="70"
+                            height="70"
+                        />
+                    </div>
                 </div>
             </div>
                 <SearchComponent />
