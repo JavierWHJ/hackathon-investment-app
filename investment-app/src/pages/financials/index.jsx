@@ -17,6 +17,7 @@ const Financials = () => {
                     </div>
                 </div>
             </div>
+            <br></br>
                 <SearchComponent />
         </Layout>
     );
