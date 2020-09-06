@@ -1,13 +1,12 @@
 import React from "react";
 import StepperComponent from "../components/StepperComponent";
 import StepperButtonComponent from "../components/StepperButtonComponent";
-import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import { Modal } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 import ArticleContainer from "./ArticleContainer";
 import { useRouter } from "next/router";
-
+import QuizComponent from "../components/QuizComponent";
 
 function getSteps() {
     return [
@@ -39,6 +38,7 @@ const AcademyContainer = () => {
 
     const [activeStep, setActiveStep] = React.useState(0);
     const [show, setShow] = React.useState(false);
+    const [showEnd, setShowEnd] = React.useState(false);
     const [article, setArticle] = React.useState("");
 
     const steps = getSteps();
@@ -60,7 +60,11 @@ const AcademyContainer = () => {
     };
 
     const handleStep = (article) => {
-        setArticle(article)
+        setArticle(article);
+    };
+
+    const handleQuizEnd = () => {
+        setShowEnd(true);
     }
 
     return (
@@ -84,15 +88,24 @@ const AcademyContainer = () => {
                 <Modal show={show} onHide={handleClose} centered>
                     {activeStep === steps.length - 1 && (
                         <Modal.Body className="p-5">
-                            <Paper square elevation={0}>
-                                <Typography>
-                                    Congratulations on completing P.E.A.R Academy!
-                                    Practice what you learn in our Virtual Portfolio!
-                                </Typography>
-                                <Button className="mt-5" onClick={handleReset}>
-                                    End Academy
-                                </Button>
-                            </Paper>
+                            <div className={showEnd ? "d-none" : "d-block"}>
+                                <QuizComponent handleQuizEnd={handleQuizEnd} />
+                            </div>
+                            <div className={showEnd ? "d-block" : "d-none"}>
+                                <Paper square elevation={0}>
+                                    <Typography>
+                                        Congratulations on completing P.E.A.R
+                                        Academy! Practice what you learn in our
+                                        Virtual Portfolio!
+                                    </Typography>
+                                    <Button
+                                        className="mt-5"
+                                        onClick={handleReset}
+                                    >
+                                        End Academy
+                                    </Button>
+                                </Paper>
+                            </div>
                         </Modal.Body>
                     )}
                 </Modal>

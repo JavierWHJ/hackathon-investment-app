@@ -15,6 +15,7 @@ const mockData = {
 const WatchListContainer = () => {
     return (
         <>
+            <h2 className="mb-3 text-center border">Your Watchlist</h2>
             <Table striped hover>
                 <thead>
                     <tr>
@@ -29,7 +30,9 @@ const WatchListContainer = () => {
                     })}
                 </tbody>
             </Table>
-            <Button block className="mt-4">Add Watchlist</Button>
+            <Button block className="mt-4">
+                Add Watchlist
+            </Button>
         </>
     );
 };
