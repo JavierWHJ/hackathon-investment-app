@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 
 const StepperButtonComponent = (props) => {
     return (
-        <div>
+        <div className="ml-4">
             <Button
                 disabled={props.activeStep === 0}
                 onClick={props.handleBack}
@@ -21,7 +21,7 @@ const StepperButtonComponent = (props) => {
                 disabled={props.activeStep === props.steps.length}
             >
                 {props.activeStep === props.steps.length - 1
-                    ? "Finish"
+                    ? "Start Quiz"
                     : "Next"}
             </Button>
         </div>
