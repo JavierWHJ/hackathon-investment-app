@@ -7,7 +7,7 @@ export default function TableComponent(financials, y1, y2, y3, y4, render) {
     }
 
     return (
-        <div>
+        <div className='p-5'>
             <h3><span>Income Statement</span></h3>
             <Table striped bordered hover size='sm'>
                 <thead>
