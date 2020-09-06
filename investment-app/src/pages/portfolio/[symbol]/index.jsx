@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { ToastContainer, toast } from 'react-toastify';
 import StockContainer from "../../../components/portfolio/containers/StockContainer";
 import Layout from "../../../components/common/Layout";
 
@@ -44,6 +45,7 @@ const Stock = () => {
             },
         }).then(res => {
             getStocksInfo(email);
+            showToast("Stocks Sold!");
         });
     }
 
@@ -60,12 +62,26 @@ const Stock = () => {
             },
         }).then(res => {
             getStocksInfo(email);
+            showToast("Stocks Bought!");
+        });
+    }
+
+    const showToast = (message) => {
+        toast.success(message, {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
         });
     }
 
     return (
         <Layout>
             <StockContainer symbol={symbol} shares={userStockShares} price={stockPrice} buyStocks={buyStocks} sellStocks={sellStocks}/>
+            <ToastContainer />
         </Layout>
     );
 };

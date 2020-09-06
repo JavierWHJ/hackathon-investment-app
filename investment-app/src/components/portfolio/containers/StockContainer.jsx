@@ -8,12 +8,8 @@ import SymbolOverviewComponent from "../components/SymbolOverviewComponent";
 const StockContainer = (props) => {
     const router = useRouter()
     const [sharesBuyAmt, setSharesBuyAmt] = useState(0);
-    const [sharesSellAmt, setSharesSellAmt] = useState(props.shares);
+    const [sharesSellAmt, setSharesSellAmt] = useState(0);
     const [showBuySell, setShowBuySell] = useState(false);
-
-    useEffect(() => {
-        setSharesSellAmt(props.shares);
-    }, [props.shares])
 
     const onClickShowBuySell = () => {
         setShowBuySell(!showBuySell);
@@ -21,6 +17,7 @@ const StockContainer = (props) => {
 
     const onBuyShares = () => {
         props.buyStocks(props.price, parseInt(sharesBuyAmt))
+        setSharesBuyAmt(0);
     }
 
     const onSellShares = () => {
@@ -93,6 +90,9 @@ const StockContainer = (props) => {
                                         Buying Shares?
                                     </Button>
                                 </div>
+                                <Card.Subtitle>
+                                    Shares Owned: {props.shares}
+                                </Card.Subtitle>
                                 <Form>
                                     <Form.Group as={Row} className="mt-3">
                                         <Form.Label column xs={8}>
