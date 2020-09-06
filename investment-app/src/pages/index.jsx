@@ -17,6 +17,9 @@ const Home = () => {
     res.json().then((res) => setNewsList(res));
   }
 
+  // console.log(newsList);
+  console.log(newsList.result);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -79,22 +82,30 @@ const Home = () => {
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px"
         >
-          {console.log(newsList)}
+          {/* {console.log(newsList)} */}
           {/* {Object.values(newsList)).map((article, index) => {
             return console.log("hi");
           })} */}
 
-          {/* {newsList.map((news) => {
-            return <div className={styles.card}>{news.title}</div>;
-          })} */}
-          <div className={styles.card}>{}</div>
+          {newsList.result.map((news) => {
+            return <div className={styles.card}>
+              <img className={styles.cardImage}>
+                {news.img}
+              </img>
+              <div className={styles.cardTitle}>
+                {news.title}
+              </div>
+            </div>;
+          })}
+
+          {/* <div className={styles.card}>News 1</div>
           <div className={styles.card}>News 2</div>
           <div className={styles.card}>News 3</div>
           <div className={styles.card}>News 4</div>
           <div className={styles.card}>News 5</div>
           <div className={styles.card}>News 6</div>
           <div className={styles.card}>News 7</div>
-          <div className={styles.card}>News 8</div>
+          <div className={styles.card}>News 8</div> */}
         </Carousel>
       </div>
     </Layout>
