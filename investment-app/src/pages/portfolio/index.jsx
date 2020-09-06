@@ -6,6 +6,7 @@ import Cookies from 'js-cookie';
 import MarketChartComponent from "../../components/portfolio/components/MarketChartComponent";
 import MarketDataComponent from "../../components/portfolio/components/MarketDataComponent";
 import WatchListContainer from "../../components/portfolio/containers/WatchListContainer";
+import HoldingsContainer from "../../components/portfolio/containers/HoldingsContainer";
 
 const Portfolio = () => {
 
@@ -33,7 +34,9 @@ const Portfolio = () => {
                     </Row>
                     <MarketDataComponent />
                 </Tab>
-                <Tab eventKey="holdings" title="Holdings"></Tab>
+                <Tab eventKey="holdings" title="Holdings">
+                    <HoldingsContainer />
+                </Tab>
             </Tabs>
         </Container>
     </Layout>
