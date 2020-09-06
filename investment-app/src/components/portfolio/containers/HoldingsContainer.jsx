@@ -5,6 +5,19 @@ import TransactionComponent from "../components/TransactionComponent";
 
 const HoldingsContainer = (props) => {
     console.log(props.userInfo)
+    console.log(props.holdingsPrices)
+
+    // const portfolioValue += props.holdingsPrices.map((stock) => {
+    //     return (stock.shares * stock.currentPrice);
+    // }
+    // );
+
+    // console.log(portfolioValue)
+
+    // function addPortfolioValue() {
+
+    // }
+
     return (
         <div className="mt-4 mx-5">
             <h2>{props.userInfo.name}</h2>
@@ -23,15 +36,16 @@ const HoldingsContainer = (props) => {
                                 <th>% Return</th>
                             </tr>
                         </thead>
+                        {console.log(props.holdingsPrices)}
                         <tbody>
-                            {Object.keys(props.holdings).map((stock) => {
-                                return <HoldingsComponent stock={stock} info={props.holdings[stock]} />;
+                            {Object.keys(props.holdingsPrices).map((stock) => {
+                                return <HoldingsComponent stock={stock} info={props.holdingsPrices[stock]} />;
                             })}
                         </tbody>
                     </Table>
                 </Tab>
                 <Tab eventKey="transactions" title="Transactions">
-                    <TransactionComponent transactions={props.userInfo.transactions}/>
+                    <TransactionComponent transactions={props.userInfo.transactions} />
                 </Tab>
             </Tabs>
         </div>

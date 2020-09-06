@@ -67,13 +67,16 @@ const Portfolio = () => {
             const holdings = res.data.result.holdings;
             setUserInfo(res.data.result);
             setUserHoldings(res.data.result.holdings);
+            // console.log(holdings);
             Promise.all(Object.keys(holdings).map((symbol) => {
                 return axios.get(
                     "http://yfin-env.eba-m8jmyudi.ap-southeast-1.elasticbeanstalk.com/daily/" + symbol
                 ).then(res => {
                     const symbolInfo = {
                         symbol: symbol,
-                        price: res.data.current_price,
+                        avgPrice: holdings[symbol][0],
+                        shares: holdings[symbol][1],
+                        currentPrice: res.data.current_price,
                         percentage: res.data.percent_change
                     }
                     return symbolInfo
