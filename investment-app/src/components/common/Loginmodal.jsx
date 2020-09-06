@@ -32,7 +32,7 @@ const Loginmodal = (props) => {
                 email: emailfield,
                 name: namefield,
             }
-        }).then(res => console.log(res)).then(() => {
+        }).then(res => {}).then(() => {
             Cookies.set('userEmail', emailfield);
             router.push("/profile");
         });
