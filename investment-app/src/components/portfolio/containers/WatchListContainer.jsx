@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import { Table, Button } from "react-bootstrap";
 import WatchListComponent from "../components/WatchListComponent";
+import AddWatchListComponent from "../components/AddWatchListComponent";
 
 const WatchListContainer = (props) => {
+    const [show, setShow] = useState(false);
+    const [symbol, setSymbol] = useState("");
+
+    const handleAddStock = () => {
+        props.addUserWatchList(props.email, symbol)
+        setShow(false)
+    }
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <>
@@ -18,12 +29,13 @@ const WatchListContainer = (props) => {
                 <tbody>
                     {props.watchlist.map((stock) => {
                         return (
-                            <WatchListComponent key={stock} stock={stock} />
+                            <WatchListComponent key={stock} stock={stock} email={props.email} onDelete={props.deleteUserWatchList}/>
                         );
                     })}
                 </tbody>
             </Table>
-            <Button block className="mt-4">
+            <AddWatchListComponent show={show} symbol={symbol} onChange={setSymbol} handleAddStock={handleAddStock} handleClose={handleClose} />
+            <Button block className="mt-4" onClick={handleShow}>
                 Add Watchlist
             </Button>
         </>

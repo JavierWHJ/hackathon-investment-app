@@ -1,11 +1,34 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {Button, Table} from 'react-bootstrap'
 import axios from 'axios';
-
+import TableComponent from './TableComponent.jsx'
 export default function SearchComponent() {
     const [ticker, setTicker] = useState("");
     const [check, setCheck] = useState(true);
-    const [financials, setFinancials] = useState({data:{}});
+    const [financials, setFinancials] = useState({data:{1: {"Total Revenue":1,"Cost of Revenue":1,
+    "Gross Profit":1, "Research Development":1, "Selling General Administrative":1, "Total Operating Expenses":1
+    ,"Operating Income":1, "Interest Expense":1, "Total Other Income Expense Net":1, "Income Before Tax":1,
+    "Income Tax Expense":1, "Total Revenue":1} , 2:{"Total Revenue":1,"Cost of Revenue":1,
+    "Gross Profit":1, "Research Development":1, "Selling General Administrative":1, "Total Operating Expenses":1
+    ,"Operating Income":1, "Interest Expense":1, "Total Other Income Expense Net":1, "Income Before Tax":1,
+    "Income Tax Expense":1, "Total Revenue":1}, 3:{"Total Revenue":1,"Cost of Revenue":1,
+    "Gross Profit":1, "Research Development":1, "Selling General Administrative":1, "Total Operating Expenses":1
+    ,"Operating Income":1, "Interest Expense":1, "Total Other Income Expense Net":1, "Income Before Tax":1,
+    "Income Tax Expense":1, "Total Revenue":1}, 4:{"Total Revenue":1,"Cost of Revenue":1,
+    "Gross Profit":1, "Research Development":1, "Selling General Administrative":1, "Total Operating Expenses":1
+    ,"Operating Income":1, "Interest Expense":1, "Total Other Income Expense Net":1, "Income Before Tax":1,
+    "Income Tax Expense":1, "Total Revenue":1}}});
+
+    const [y1, sety1] = useState(1);
+
+    const [y2, sety2] = useState(2);
+
+    const [y3, sety3] = useState(3);
+
+    const [y4, sety4] = useState(4);
+
+    const [render, setRender] = useState(false);
+
     const getTicker = async () => {
         if (ticker == ""){
             setCheck(false);
@@ -14,13 +37,26 @@ export default function SearchComponent() {
             setCheck(true);
         }
 
-        const response = await axios.get('http://yfin-env.eba-m8jmyudi.ap-southeast-1.elasticbeanstalk.com/financials/' + ticker);
-        console.log(response);
-        setFinancials(response);
-        return
+        axios.get('http://yfin-env.eba-m8jmyudi.ap-southeast-1.elasticbeanstalk.com/financials/' + ticker).then(res => {
+            console.log(res);
+            setFinancials(res);
+        });
     }
 
+    useEffect(() =>{
 
+        sety1(Object.keys(financials.data)[0]);
+        sety2(Object.keys(financials.data)[1]);
+        sety3(Object.keys(financials.data)[2]);
+        sety4(Object.keys(financials.data)[3]);
+        
+        // setrev("Total Revenue")
+        // setebitda("Net Income")
+        if (y1 !== 1){
+            setRender(true)
+        }
+    }, [financials])
+        
     return (
         <>
         <div class="container d-flex justify-content-center">
@@ -35,96 +71,7 @@ export default function SearchComponent() {
             
         </div>
         <div>
-            <h3><span>Income Statement</span></h3>All numbers in thousands
-            <Table striped bordered hover size='sm'>
-                <thead>
-                    <tr>
-                        <th>Breakdown</th>
-                        <th>{Object.keys(financials.data)[0]}</th>
-                        <th>{Object.keys(financials.data)[1]}</th>
-                        <th>{Object.keys(financials.data)[2]}</th>
-                        <th>{Object.keys(financials.data)[3]}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Total revenue</td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td>Cost of revenue</td>
-                    </tr>
-
-                    <tr>
-                        <td>Gross profit</td>
-                    </tr>
-
-                    <tr>
-                        <td>Research development</td>
-                    </tr>
-
-                    <tr>
-                        <td>Selling general and administrative</td>
-                    </tr>
-
-                    <tr>
-                        <td><b>Total operating expenses</b></td>
-                    </tr>
-
-                    <tr>
-                        <td><b>Operating income or loss</b></td>
-                    </tr>
-
-                    <tr>
-                        <td>Interest expense</td>
-                    </tr>
-
-                    <tr>
-                        <td>Total other income/expenses net</td>
-                    </tr>
-
-                    <tr>
-                        <td>Income before tax</td>
-                    </tr>
-
-                    <tr>
-                        <td>Income tax expense</td>
-                    </tr>
-
-                    <tr>
-                        <td>Income from continuing operations</td>
-                    </tr>
-
-                    <tr>
-                        <td><b>Net income</b></td>
-                    </tr>
-
-                    <tr>
-                        <td>Net Income Applicable To Common Shares</td>
-                    </tr>
-
-                    <tr>
-                        <td>Basic EPS</td>
-                    </tr>
-
-                    <tr>
-                        <td>Diluted EPS</td>
-                    </tr>
-
-                    <tr>
-                        <td>Basic average shares</td>
-                    </tr>
-
-                    <tr>
-                        <td>Diluted average shares</td>
-                    </tr>
-
-                    <tr>
-                        <td>EBITDA</td>
-                    </tr>
-                </tbody>
-            </Table>
+            {TableComponent(financials, y1, y2, y3, y4, render)}
         </div>
         </>
     )

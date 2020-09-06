@@ -47,10 +47,12 @@ const AcademyContainer = () => {
     const handleShow = () => setShow(true);
 
     const handleNext = () => {
+        window.scrollTo(0, 0)
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
 
     const handleBack = () => {
+        window.scrollTo(0, 0)
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
@@ -68,23 +70,23 @@ const AcademyContainer = () => {
     }
 
     return (
-        <>
-            <StepperComponent
-                activeStep={activeStep}
-                steps={steps}
-                handleStep={handleStep}
-            />
+        <>  
+            <div>
+                <StepperComponent
+                    activeStep={activeStep}
+                    steps={steps}
+                    handleStep={handleStep}
+                />
+                <StepperButtonComponent
+                    activeStep={activeStep}
+                    steps={steps}
+                    handleNext={handleNext}
+                    handleBack={handleBack}
+                    handleShow={handleShow}
+                />
+            </div>
             <div className="container mb-5">
                 <ArticleContainer article={article} />
-                <div className="mt-4">
-                    <StepperButtonComponent
-                        activeStep={activeStep}
-                        steps={steps}
-                        handleNext={handleNext}
-                        handleBack={handleBack}
-                        handleShow={handleShow}
-                    />
-                </div>
                 <Modal show={show} onHide={handleClose} centered>
                     {activeStep === steps.length - 1 && (
                         <Modal.Body className="p-5">

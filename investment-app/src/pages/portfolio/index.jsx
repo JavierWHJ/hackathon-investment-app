@@ -7,6 +7,7 @@ import MarketChartComponent from "../../components/portfolio/components/MarketCh
 import MarketDataComponent from "../../components/portfolio/components/MarketDataComponent";
 import WatchListContainer from "../../components/portfolio/containers/WatchListContainer";
 import HoldingsContainer from "../../components/portfolio/containers/HoldingsContainer";
+import PieChartComponent from "../../components/portfolio/components/PieChartComponent";
 
 const Portfolio = () => {
     const email = Cookies.get('userEmail');
@@ -53,6 +54,20 @@ const Portfolio = () => {
         });
     }
 
+    const deleteUserWatchList = (email, ticker) => {
+        const url = "http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/watchlist/" + ticker;
+        axios({
+            method: "delete",
+            url: url,
+            headers: {},
+            data: {
+                email: email
+            },
+        }).then(res => {
+            updateUserWatchList(email);
+        });
+    }
+
     return (
         <Layout>
             <Container fluid>
@@ -63,13 +78,20 @@ const Portfolio = () => {
                                 <MarketChartComponent />
                             </Col>
                             <Col>
-                                <WatchListContainer watchlist={userWatchList} addUserWatchList={addUserWatchList}/>
+                                <WatchListContainer watchlist={userWatchList} email={email} addUserWatchList={addUserWatchList} deleteUserWatchList={deleteUserWatchList}/>
                             </Col>
                         </Row>
                         <MarketDataComponent />
                     </Tab>
                     <Tab eventKey="holdings" title="Holdings">
-                        <HoldingsContainer/>
+                        <Row>
+                            <Col xs={8}>
+                                <HoldingsContainer />
+                            </Col>
+                            <Col xs={3}>
+                                <PieChartComponent />
+                            </Col>
+                        </Row>
                     </Tab>
                 </Tabs>
             </Container>
