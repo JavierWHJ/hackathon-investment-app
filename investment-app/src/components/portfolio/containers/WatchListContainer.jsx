@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Table, Button } from "react-bootstrap";
 import WatchListComponent from "../components/WatchListComponent";
 
@@ -12,7 +12,9 @@ const mockData = {
     ],
 };
 
-const WatchListContainer = () => {
+const WatchListContainer = (props) => {
+    const watchListSymbols = Object.keys(props.watchlist);
+
     return (
         <>
             <h2 className="mb-3 text-center border">Your Watchlist</h2>
@@ -25,8 +27,10 @@ const WatchListContainer = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {mockData.watchlist.map((stock) => {
-                        return <WatchListComponent key={stock.key} stock={stock} />;
+                    {watchListSymbols.map((symbol) => {
+                        return (
+                            <WatchListComponent key={symbol} symbol={symbol} />
+                        );
                     })}
                 </tbody>
             </Table>

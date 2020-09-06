@@ -15,15 +15,21 @@ const ProfileMenu = () => {
         <Dropdown alignRight>
             <Dropdown.Toggle
                 id="dropdown-profile-menu"
-                variant="Secondary"
+                variant="light"
                 title=""
                 bsPrefix="none"
                 className="p-0"
             >
-                <img src="/user.svg" height="35" alt="User Profile" />
+                <img
+                    src="/user.svg"
+                    height="35"
+                    alt="User Profile"
+                />
             </Dropdown.Toggle>
             <Dropdown.Menu>
-                <Dropdown.Item onClick={onLogout}>Logout</Dropdown.Item>
+                <Dropdown.Item onClick={onLogout}>
+                    Logout
+                </Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     );
