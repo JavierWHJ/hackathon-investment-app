@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Modal, Button, Tabs} from 'react-bootstrap'
+import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router'
@@ -33,6 +34,7 @@ const Loginmodal = (props) => {
                 name: namefield,
             }
         }).then(res => {}).then(() => {
+            showToast("Registered!");
             Cookies.set('userEmail', emailfield);
             router.push("/profile");
         });
@@ -55,9 +57,22 @@ const Loginmodal = (props) => {
             setEmailcheck(true);
             setShow(false);
             Cookies.set('userEmail', emailfield);
+            showToast("Logged In!");
         } 
             
     };
+
+    const showToast = (message) => {
+        toast.success(message, {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
 
     return (
         <div>
@@ -74,10 +89,10 @@ const Loginmodal = (props) => {
                             <div>
                                 <form>
                                     <div class='form-group'>
-                                        <div class='email'><input placeholder='Email Address' name='email' type='email' id='email' class='s2 form-control' onChange={e =>setEmail(e.target.value)}></input></div>
+                                        <div class='email'><input placeholder='Email Address' name='email' type='email' id='email' class='s2 form-control' onChange={e =>setEmail(e.target.value)} required></input></div>
                                     </div>
                                     <div class='form-group'>
-                                        <div class='name'><input placeholder='Name' name='name' type='text' id='text' class='s2 form-control' onChange={e =>setName(e.target.value)}></input></div>
+                                        <div class='name'><input placeholder='Name' name='name' type='text' id='text' class='s2 form-control' onChange={e =>setName(e.target.value)} required></input></div>
                                     </div>
                                     <div class='text-center mb-3'>
                                         <Button class='btn btn-primary btn-block'  onClick={postSignup}>Sign Up</Button>
@@ -98,6 +113,7 @@ const Loginmodal = (props) => {
                     </Modal.Body>
                 
             </Modal>
+            <ToastContainer />
         </div>
     )
 }
