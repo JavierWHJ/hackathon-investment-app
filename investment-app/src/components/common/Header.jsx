@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
-import { Nav, Navbar } from 'react-bootstrap'
+import { Nav, Navbar, Button } from 'react-bootstrap'
 import styles from './Header.module.scss'
+import Cookies from "js-cookie";
 import ProfileMenu from './ProfileMenu';
+import Loginmodal from './Loginmodal';
 
 const Header = () => {
-    
+    const [showProfile, setShowProfile] = useState(Cookies.get("userEmail") != undefined);
+
     return (
         <>
             <Navbar bg="light" expand="lg" className={"justify-content-between", styles.header}>
@@ -26,7 +29,9 @@ const Header = () => {
                         <Nav.Link href="/portfolio">Portfolio</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-                <ProfileMenu/>
+                {
+                    showProfile ? <ProfileMenu /> : <Loginmodal button={"Login"}/>
+                }
             </Navbar>
         </>
     );
