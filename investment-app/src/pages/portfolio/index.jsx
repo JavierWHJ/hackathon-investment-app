@@ -104,7 +104,7 @@ const Portfolio = () => {
     return (
         <Layout>
             <Container fluid>
-                <Tabs defaultActiveKey="watchlist" id="uncontrolled-tab-example">
+                <Tabs className="mt-2" defaultActiveKey="watchlist" id="uncontrolled-tab-example">
                     <Tab eventKey="watchlist" title="Watchlist">
                         <Row className="mt-3">
                             <Col xs={8}>
