@@ -5,7 +5,20 @@ import MarketChartComponent from "../../components/portfolio/components/MarketCh
 import MarketDataComponent from "../../components/portfolio/components/MarketDataComponent";
 import WatchListContainer from "../../components/portfolio/containers/WatchListContainer";
 
-const Portfolio = () => {
+export async function getStaticProps() {
+    // const res = await fetch("https://.../posts");
+    // const posts = await res.json();
+    const portfolio = "hello";
+  
+    return {
+        props: {
+            portfolio,
+        },
+    };
+}
+
+const Portfolio = ({ portfolio }) => {
+  console.log(portfolio)
     return (
         <Layout>
             <Container fluid>

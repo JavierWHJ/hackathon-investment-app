@@ -26,7 +26,7 @@ const WatchListContainer = () => {
                 </thead>
                 <tbody>
                     {mockData.watchlist.map((stock) => {
-                        return <WatchListComponent stock={stock} />;
+                        return <WatchListComponent key={stock.key} stock={stock} />;
                     })}
                 </tbody>
             </Table>
