@@ -13,6 +13,7 @@ import PieChartComponent from "../../components/portfolio/components/PieChartCom
 
 const Portfolio = () => {
     const email = Cookies.get('userEmail');
+    const [userInfo, setUserInfo] = useState({});
     const [userWatchList, setUserWatchList] = useState([]);
     const [userHoldings, setUserHoldings] = useState([]);
     const [userHoldingsPrices, setUserHoldingsPrices] = useState([]);
@@ -64,6 +65,7 @@ const Portfolio = () => {
         axios.get('http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/user/' + email)
         .then(res => {
             const holdings = res.data.result.holdings;
+            setUserInfo(res.data.result);
             setUserHoldings(res.data.result.holdings);
             Promise.all(Object.keys(holdings).map((symbol) => {
                 return axios.get(
@@ -100,7 +102,7 @@ const Portfolio = () => {
                     <Tab eventKey="holdings" title="Holdings">
                         <Row>
                             <Col xs={8}>
-                                <HoldingsContainer holdings={userHoldings} holdingsPrices={userHoldingsPrices}/>
+                                <HoldingsContainer userInfo={userInfo} holdings={userHoldings} holdingsPrices={userHoldingsPrices}/>
                             </Col>
                             <Col xs={3}>
 

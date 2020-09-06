@@ -12,8 +12,9 @@ const HoldingsComponent = (props) => {
             <td>{props.stock}</td>
             <td>{shares}</td>
             <td>{price}</td>
-            {/* <td>{props.stock.marketValue}</td>
-            <td>{props.stock.percentReturn}</td> */}
+            <td>{price}</td>
+            <td>{props.stock.marketValue}</td>
+            <td>{props.stock.percentReturn}</td>
         </tr>
     );
 };
