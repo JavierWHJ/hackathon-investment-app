@@ -1,11 +1,11 @@
 import React from 'react';
 import { TradingViewEmbed, widgetType } from "react-tradingview-embed";
 
-const CompanyProfileComponent = (props) => {
+const CompanyDataComponent = (props) => {
     return (
         <div>
             <TradingViewEmbed
-                widgetType={widgetType.COMPANY_PROFILE}
+                widgetType={widgetType.FUNDAMENTAL_DATA}
                 widgetConfig={{
                     colorTheme: "light",
                     symbol: props.symbol,
@@ -16,4 +16,4 @@ const CompanyProfileComponent = (props) => {
     );
 }
 
-export default CompanyProfileComponent;
+export default CompanyDataComponent;

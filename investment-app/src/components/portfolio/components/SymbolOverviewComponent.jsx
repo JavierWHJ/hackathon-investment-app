@@ -1,19 +1,21 @@
-import React from 'react';
+import React from "react";
 import { TradingViewEmbed, widgetType } from "react-tradingview-embed";
 
-const CompanyProfileComponent = (props) => {
+const SymbolOverviewComponent = (props) => {
     return (
         <div>
             <TradingViewEmbed
-                widgetType={widgetType.COMPANY_PROFILE}
+                widgetType={widgetType.SYMBOL_OVERVIEW}
                 widgetConfig={{
                     colorTheme: "light",
-                    symbol: props.symbol,
+                    symbols: [
+                        ["Name-of-stock", props.symbol],
+                    ],
                     width: "100%",
                 }}
             />
         </div>
     );
-}
+};
 
-export default CompanyProfileComponent;
+export default SymbolOverviewComponent;
