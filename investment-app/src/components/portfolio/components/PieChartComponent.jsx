@@ -47,9 +47,9 @@ const PieChartComponent = (props) => {
     return (
         <>
             <body>
-                <h2 className="mb-3 text-center">Breakdown</h2>
+                <h2 className="mt-4 text-center ">Breakdown</h2>
                 <PieChart
-                    center={[100, 100]}
+                    center={[90, 80]}
                     animation
                     animationDuration={500}
                     animationEasing="ease-out"
@@ -58,9 +58,9 @@ const PieChartComponent = (props) => {
                     paddingAngle={0}
                     radius={50}
                     startAngle={0}
-                    viewBoxSize={[200, 200]}
+                    viewBoxSize={[180, 180]}
                     label={(data) => data.dataEntry.title}
-                    labelPosition={120}
+                    labelPosition={110}
                     lineWidth={50}
                     labelStyle={{
                         fontSize: "6px",
