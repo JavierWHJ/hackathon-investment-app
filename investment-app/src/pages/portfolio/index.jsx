@@ -17,16 +17,18 @@ const Portfolio = () => {
     const [userWatchList, setUserWatchList] = useState([]);
     const [userHoldings, setUserHoldings] = useState([]);
     const [userHoldingsPrices, setUserHoldingsPrices] = useState([]);
+    const [indexHistoricalData, setIndexHistoricalData] = useState([]);
 
 
     useEffect(() => {
         if (email != undefined) {
             updateUserWatchList(email);
             updateUserHoldings(email);
+            updateIndexHistoricalData();
         }
     }, [])
 
-    console.log(userHoldingsPrices);
+    console.log(indexHistoricalData);
 
     const updateUserWatchList = (email) => {
         axios.get('http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/watchlist/' + email).then(res => {
@@ -103,6 +105,13 @@ const Portfolio = () => {
         })
     }
 
+    const updateIndexHistoricalData = () => {
+        axios.get('http://yfin-env.eba-m8jmyudi.ap-southeast-1.elasticbeanstalk.com/history/^GSPC')
+        .then(res => {
+            setIndexHistoricalData(res);
+        })
+    }
+
     return (
         <Layout>
             <Container fluid>
@@ -121,7 +130,7 @@ const Portfolio = () => {
                     <Tab eventKey="holdings" title="Holdings">
                         <Row>
                             <Col xs={8}>
-                                <HoldingsContainer userInfo={userInfo} holdings={userHoldings} holdingsPrices={userHoldingsPrices}/>
+                                <HoldingsContainer userInfo={userInfo} holdings={userHoldings} holdingsPrices={userHoldingsPrices} index={indexHistoricalData}/>
                             </Col>
                             <Col xs={3}>
                                 <PieChartComponent userInfo={userInfo} holdingsPrices={userHoldingsPrices}/>
