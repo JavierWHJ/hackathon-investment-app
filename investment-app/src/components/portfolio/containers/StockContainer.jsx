@@ -18,7 +18,10 @@ const StockContainer = (props) => {
                     <SymbolOverviewComponent symbol={props.symbol} />
                 </Col>
                 <Col>
-                    <div className={showBuySell ? "d-none" : "d-block"}>
+                    <div
+                        className={showBuySell ? "d-none" : "d-block"}
+                        style={{ lineHeight: "40px" }}
+                    >
                         <Card className="w-100">
                             <Card.Body>
                                 <div className="d-flex justify-content-between">
@@ -34,9 +37,13 @@ const StockContainer = (props) => {
                                     </Button>
                                 </div>
                                 <Form>
-                                    <Form.Group controlId="formBasicEmail">
-                                        <Form.Label>Shares</Form.Label>
-                                        <Form.Control type="number" />
+                                    <Form.Group as={Row} className="mt-3">
+                                        <Form.Label column xs={8}>
+                                            Shares
+                                        </Form.Label>
+                                        <Col sm={4}>
+                                            <Form.Control type="number" />
+                                        </Col>
                                     </Form.Group>
                                     <Card.Text>Market Price</Card.Text>
                                     <Card.Text>Estimated Cost</Card.Text>
@@ -45,7 +52,10 @@ const StockContainer = (props) => {
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className={showBuySell ? "d-block" : "d-none"}>
+                    <div
+                        className={showBuySell ? "d-block" : "d-none"}
+                        style={{ lineHeight: "40px" }}
+                    >
                         <Card className="w-100">
                             <Card.Body>
                                 <div className="d-flex justify-content-between">
@@ -61,9 +71,13 @@ const StockContainer = (props) => {
                                     </Button>
                                 </div>
                                 <Form>
-                                    <Form.Group controlId="formBasicEmail">
-                                        <Form.Label>Shares</Form.Label>
-                                        <Form.Control type="number" />
+                                    <Form.Group as={Row} className="mt-3">
+                                        <Form.Label column xs={8}>
+                                            Shares
+                                        </Form.Label>
+                                        <Col sm={4}>
+                                            <Form.Control type="number" />
+                                        </Col>
                                     </Form.Group>
                                     <Card.Text>Market Price</Card.Text>
                                     <Card.Text>Estimated Cost</Card.Text>
