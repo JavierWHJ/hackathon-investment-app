@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="453.543px" height="453.543px" viewBox="0 0 453.543 453.543" enable-background="new 0 0 453.543 453.543"
+	 xml:space="preserve">
+<circle fill="#373736" cx="226.771" cy="226.771" r="198.333"/>
+<circle fill="#FFFFFF" cx="225.5" cy="205.544" r="78.333"/>
+<g>
+	<defs>
+		<circle id="SVGID_1_" cx="226.771" cy="226.771" r="198.333"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M365.476,399.95c0,24.674-20.827,44.675-46.522,44.675H134.59
+		c-25.693,0-46.521-20.001-46.521-44.675v-58.738c0-24.675,20.829-44.675,46.521-44.675h184.363c25.695,0,46.522,20,46.522,44.675
+		V399.95z"/>
+</g>
+</svg>

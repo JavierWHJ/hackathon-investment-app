@@ -2,8 +2,11 @@ import React, {useState} from 'react'
 import {Modal, Button, Tabs} from 'react-bootstrap'
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { useRouter } from 'next/router'
 
 const Loginmodal = () => {
+    const router = useRouter()
+
     const [show, setShow] = useState(false);
     const [login, setStatus] = useState(false);
     const [namefield, setName] = useState("");
@@ -31,7 +34,7 @@ const Loginmodal = () => {
             }
         }).then(res => console.log(res)).then(() => {
             Cookies.set('userEmail', emailfield);
-            window.location.href = "http://localhost:3000/profile";
+            router.push("/profile");
         });
     }
 

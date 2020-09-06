@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Nav, Navbar } from 'react-bootstrap'
 import styles from './Header.module.scss'
+import ProfileMenu from './ProfileMenu';
 
 const Header = () => {
+    
     return (
         <>
-            <Navbar bg="light" expand="lg" className={styles.header}>
+            <Navbar bg="light" expand="lg" className={"justify-content-between", styles.header}>
                 <Navbar.Brand href="/">
                     <img
                         src="/pear.svg"
@@ -24,6 +26,7 @@ const Header = () => {
                         <Nav.Link href="/portfolio">Portfolio</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
+                <ProfileMenu/>
             </Navbar>
         </>
     );
