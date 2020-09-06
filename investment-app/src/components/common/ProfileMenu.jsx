@@ -8,7 +8,7 @@ const ProfileMenu = () => {
 
     const onLogout = () => {
         Cookies.remove('userEmail');
-        router.reload();
+        router.pathname != '/' ? router.push('/') : router.reload();
     }
 
     return (
