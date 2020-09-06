@@ -4,11 +4,11 @@ import WatchListComponent from "../components/WatchListComponent";
 
 const mockData = {
     watchlist: [
-        { key: "ABC", price: "200" },
-        { key: "DEF", price: "200" },
-        { key: "GHI", price: "200" },
-        { key: "JKL", price: "200" },
-        { key: "MNO", price: "200" },
+        { key: "AAPL", price: "200" },
+        { key: "GOOGL", price: "200" },
+        { key: "MSFT", price: "200" },
+        { key: "GS", price: "200" },
+        { key: "JPM", price: "200" },
     ],
 };
 
