@@ -9,13 +9,19 @@ import WatchListContainer from "../../components/portfolio/containers/WatchListC
 import HoldingsContainer from "../../components/portfolio/containers/HoldingsContainer";
 import PieChartComponent from "../../components/portfolio/components/PieChartComponent";
 
+
+
 const Portfolio = () => {
     const email = Cookies.get('userEmail');
     const [userWatchList, setUserWatchList] = useState([]);
+    const [userHoldings, setUserHoldings] = useState([]);
+    const [userHoldingsPrices, setUserHoldingsPrices] = useState([]);
+
 
     useEffect(() => {
         if (email != undefined) {
             updateUserWatchList(email);
+            updateUserHoldings(email);
         }
     }, [])
 
@@ -54,19 +60,34 @@ const Portfolio = () => {
         });
     }
 
-    const deleteUserWatchList = (email, ticker) => {
-        const url = "http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/watchlist/" + ticker;
-        axios({
-            method: "delete",
-            url: url,
-            headers: {},
-            data: {
-                email: email
-            },
-        }).then(res => {
-            updateUserWatchList(email);
-        });
+    const updateUserHoldings = (email) => {
+        axios.get('http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/user/' + email)
+        .then(res => {
+            setUserHoldings(res.data.result.holdings);
+            updateHoldingsPrices();
+        })
     }
+
+    const updateHoldingsPrices = () => {
+        Promise.all(Object.keys(userHoldings).map((symbol) => {
+            return axios.get(
+                "http://yfin-env.eba-m8jmyudi.ap-southeast-1.elasticbeanstalk.com/daily/" + symbol
+            ).then(res => {
+                const symbolInfo = {
+                    symbol: symbol,
+                    price: res.data.current_price,
+                    percentage: res.data.percent_change
+                }
+                return symbolInfo
+            });
+        })).then(res => {
+            setUserHoldingsPrices(res);
+        })
+    };
+
+    console.log(userHoldingsPrices)
+    
+    
 
     return (
         <Layout>
@@ -78,7 +99,7 @@ const Portfolio = () => {
                                 <MarketChartComponent />
                             </Col>
                             <Col>
-                                <WatchListContainer watchlist={userWatchList} email={email} addUserWatchList={addUserWatchList} deleteUserWatchList={deleteUserWatchList}/>
+                                <WatchListContainer watchlist={userWatchList} addUserWatchList={addUserWatchList} />
                             </Col>
                         </Row>
                         <MarketDataComponent />
@@ -86,10 +107,10 @@ const Portfolio = () => {
                     <Tab eventKey="holdings" title="Holdings">
                         <Row>
                             <Col xs={8}>
-                                <HoldingsContainer />
+                                <HoldingsContainer holdings={userHoldings} holdingsPrices={userHoldingsPrices}/>
                             </Col>
                             <Col xs={3}>
-                                <PieChartComponent />
+
                             </Col>
                         </Row>
                     </Tab>
