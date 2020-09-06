@@ -8,8 +8,8 @@ const HoldingsContainer = (props) => {
     return (
         <div className="mt-4 mx-5">
             <h2>{props.userInfo.name}</h2>
-            <Tabs defaultActiveKey="holdings" id="uncontrolled-tab-example">
-                <Tab eventKey="holdings" title="Holdings">
+            <Tabs defaultActiveKey="account" id="uncontrolled-tab-example">
+                <Tab eventKey="account" title="Account">
                     <h3 className="mt-4">${props.userInfo.cash}</h3>
                     <p>Portfolio Value</p>
                     <Table className="mt-5" striped hover>
