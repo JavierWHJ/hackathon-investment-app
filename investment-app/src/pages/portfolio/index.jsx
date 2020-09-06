@@ -7,6 +7,7 @@ import MarketChartComponent from "../../components/portfolio/components/MarketCh
 import MarketDataComponent from "../../components/portfolio/components/MarketDataComponent";
 import WatchListContainer from "../../components/portfolio/containers/WatchListContainer";
 import HoldingsContainer from "../../components/portfolio/containers/HoldingsContainer";
+import PieChartComponent from "../../components/portfolio/components/PieChartComponent";
 
 const Portfolio = () => {
     const email = Cookies.get('userEmail');
@@ -69,7 +70,14 @@ const Portfolio = () => {
                         <MarketDataComponent />
                     </Tab>
                     <Tab eventKey="holdings" title="Holdings">
-                        <HoldingsContainer/>
+                        <Row>
+                            <Col xs={8}>
+                                <HoldingsContainer />
+                            </Col>
+                            <Col xs={3}>
+                                <PieChartComponent />
+                            </Col>
+                        </Row>
                     </Tab>
                 </Tabs>
             </Container>
