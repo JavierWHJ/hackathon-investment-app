@@ -22,6 +22,7 @@ const Portfolio = () => {
         if (email != undefined) {
             updateUserWatchList(email);
             updateUserHoldings(email);
+            // updateHoldingsPrices();
         }
     }, [])
 
@@ -84,9 +85,6 @@ const Portfolio = () => {
             setUserHoldingsPrices(res);
         })
     };
-
-    console.log(userHoldingsPrices)
-    
     
 
     return (
