@@ -47,10 +47,12 @@ const AcademyContainer = () => {
     const handleShow = () => setShow(true);
 
     const handleNext = () => {
+        window.scrollTo(0, 0)
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
 
     const handleBack = () => {
+        window.scrollTo(0, 0)
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
