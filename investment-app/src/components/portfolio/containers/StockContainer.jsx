@@ -86,9 +86,6 @@ const StockContainer = (props) => {
                             </Card.Body>
                         </Card>
                     </div>
-                    <Button block className="mt-4">
-                        Add to Watchlist
-                    </Button>
                 </Col>
             </Row>
             <Row>
