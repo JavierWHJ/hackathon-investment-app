@@ -1,18 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Button, Form } from "react-bootstrap";
 import CompanyDataComponent from "../components/CompanyDataComponent";
 import CompanyProfileComponent from "../components/CompanyProfileComponent";
 import SymbolOverviewComponent from "../components/SymbolOverviewComponent";
 
 const StockContainer = (props) => {
+    const [sharesBuyAmt, setSharesBuyAmt] = useState(0);
+    const [sharesSellAmt, setSharesSellAmt] = useState(props.shares);
     const [showBuySell, setShowBuySell] = useState(false);
+
+    useEffect(() => {
+        setSharesSellAmt(props.shares);
+    }, [props.shares])
 
     const onClickShowBuySell = () => {
         setShowBuySell(!showBuySell);
     };
 
+    const onBuyShares = () => {
+        props.buyStocks(props.price, parseInt(sharesBuyAmt))
+    }
+
+    const onSellShares = () => {
+        props.sellStocks(props.price, parseInt(sharesSellAmt))
+    }
+
     return (
-        <div className="mx-5 mt-3">
+        <div className="mx-5 mt-4">
             <Row>
                 <Col xs={8}>
                     <SymbolOverviewComponent symbol={props.symbol} />
@@ -42,12 +56,18 @@ const StockContainer = (props) => {
                                             Shares
                                         </Form.Label>
                                         <Col sm={4}>
-                                            <Form.Control type="number" />
+                                            <Form.Control type="number" value={sharesBuyAmt} onChange={(e) => setSharesBuyAmt(e.target.value)}/>
                                         </Col>
                                     </Form.Group>
-                                    <Card.Text>Market Price</Card.Text>
-                                    <Card.Text>Estimated Cost</Card.Text>
-                                    <Button block>Buy</Button>
+                                    <div className="d-flex justify-content-between">
+                                        <Card.Text>Market Price</Card.Text>
+                                        <Card.Text>${props.price}</Card.Text>
+                                    </div>
+                                    <div className="d-flex justify-content-between">
+                                        <Card.Text>Estimated Cost</Card.Text>
+                                        <Card.Text>${props.price * Math.max(1, sharesBuyAmt)}</Card.Text>
+                                    </div>
+                                    <Button block onClick={onBuyShares}>Buy Shares</Button>
                                 </Form>
                             </Card.Body>
                         </Card>
@@ -76,12 +96,18 @@ const StockContainer = (props) => {
                                             Shares
                                         </Form.Label>
                                         <Col sm={4}>
-                                            <Form.Control type="number" />
+                                            <Form.Control type="number" value={sharesSellAmt} onChange={(e) => setSharesSellAmt(e.target.value)}/>
                                         </Col>
                                     </Form.Group>
-                                    <Card.Text>Market Price</Card.Text>
-                                    <Card.Text>Estimated Cost</Card.Text>
-                                    <Button block>Sell</Button>
+                                    <div className="d-flex justify-content-between">
+                                        <Card.Text>Market Price</Card.Text>
+                                        <Card.Text>${props.price}</Card.Text>
+                                    </div>
+                                    <div className="d-flex justify-content-between">
+                                        <Card.Text>Estimated Cost</Card.Text>
+                                        <Card.Text>${props.price * Math.max(1, sharesSellAmt)}</Card.Text>
+                                    </div>
+                                    <Button block onClick={onSellShares}>Sell Shares</Button>
                                 </Form>
                             </Card.Body>
                         </Card>

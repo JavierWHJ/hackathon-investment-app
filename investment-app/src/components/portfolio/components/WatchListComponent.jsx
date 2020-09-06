@@ -24,7 +24,7 @@ const WatchListComponent = (props) => {
                 style={{ cursor: "pointer" }}
             >
                 <td onClick={onClickStock}>{props.stock.symbol}</td>
-                <td onClick={onClickStock}>{props.stock.price}</td>
+                <td onClick={onClickStock}>${props.stock.price}</td>
                 {checkPercentageValue(props.stock.percentage) ? 
                     <td onClick={onClickStock}><span className="text-success">{props.stock.percentage}</span></td> : 
                     <td onClick={onClickStock}><span className="text-danger">{props.stock.percentage}</span></td>}
