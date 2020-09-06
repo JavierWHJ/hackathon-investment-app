@@ -2,18 +2,7 @@ import React, { useState } from "react";
 import { Table, Button } from "react-bootstrap";
 import WatchListComponent from "../components/WatchListComponent";
 
-const mockData = {
-    watchlist: [
-        { key: "AAPL", price: "200" },
-        { key: "GOOGL", price: "200" },
-        { key: "MSFT", price: "200" },
-        { key: "GS", price: "200" },
-        { key: "JPM", price: "200" },
-    ],
-};
-
 const WatchListContainer = (props) => {
-    const watchListSymbols = Object.keys(props.watchlist);
 
     return (
         <>
@@ -27,9 +16,9 @@ const WatchListContainer = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {watchListSymbols.map((symbol) => {
+                    {props.watchlist.map((stock) => {
                         return (
-                            <WatchListComponent key={symbol} symbol={symbol} />
+                            <WatchListComponent key={stock} stock={stock} />
                         );
                     })}
                 </tbody>

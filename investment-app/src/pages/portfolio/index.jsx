@@ -10,7 +10,7 @@ import HoldingsContainer from "../../components/portfolio/containers/HoldingsCon
 
 const Portfolio = () => {
     const email = Cookies.get('userEmail');
-    const [userWatchList, setUserWatchList] = useState({});
+    const [userWatchList, setUserWatchList] = useState([]);
 
     useEffect(() => {
         if (email != undefined) {
@@ -20,7 +20,21 @@ const Portfolio = () => {
 
     const updateUserWatchList = (email) => {
         axios.get('http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/watchlist/' + email).then(res => {
-            setUserWatchList(res.data.result.watchlist);
+            const watchlist = res.data.result.watchlist;
+            Promise.all(Object.keys(watchlist).map((symbol) => {
+                return axios.get(
+                    "http://yfin-env.eba-m8jmyudi.ap-southeast-1.elasticbeanstalk.com/daily/" + symbol
+                ).then(res => {
+                    const symbolInfo = {
+                        symbol: symbol,
+                        price: res.data.current_price,
+                        percentage: res.data.percent_change
+                    }
+                    return symbolInfo
+                });
+            })).then(res => {
+                setUserWatchList(res);
+            })
         });
     }
 
