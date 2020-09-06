@@ -1,9 +1,10 @@
 import React from "react";
-import { Table } from "react-bootstrap";
+import { Row, Table } from "react-bootstrap";
 import HoldingsComponent from "../components/HoldingsComponent";
+import PieChartComponent from "../components/PieChartComponent";
 
 const mockData = {
-    totalValue: { totalValue: "100000", totalReturn: "50000", totalPercentReturn: "100"},
+    totalValue: { totalValue: "100000", totalReturn: "50000", totalPercentReturn: "50"},
 
     holdings: [
         { key: "AAPL", price: "200", shares: "30", marketValue: "20000", percentReturn: "50" },
@@ -17,6 +18,9 @@ const mockData = {
 const HoldingsContainer = () => {
     return (
         <>
+            <Row>
+
+            </Row>
             <Table striped hover>
                 <thead>
                     <tr>
