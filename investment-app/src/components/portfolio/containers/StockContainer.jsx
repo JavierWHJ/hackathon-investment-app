@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Button, Form } from "react-bootstrap";
+import { useRouter } from 'next/router'
 import CompanyDataComponent from "../components/CompanyDataComponent";
 import CompanyProfileComponent from "../components/CompanyProfileComponent";
 import SymbolOverviewComponent from "../components/SymbolOverviewComponent";
 
 const StockContainer = (props) => {
+    const router = useRouter()
     const [sharesBuyAmt, setSharesBuyAmt] = useState(0);
     const [sharesSellAmt, setSharesSellAmt] = useState(props.shares);
     const [showBuySell, setShowBuySell] = useState(false);
@@ -27,6 +29,7 @@ const StockContainer = (props) => {
 
     return (
         <div className="mx-5 mt-4">
+            <Button variant="light" className="mb-3 border" onClick={() => router.push("/portfolio")}>Back to Portfolio</Button>
             <Row>
                 <Col xs={8}>
                     <SymbolOverviewComponent symbol={props.symbol} />
