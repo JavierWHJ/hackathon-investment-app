@@ -26,6 +26,8 @@ const Portfolio = () => {
         }
     }, [])
 
+    console.log(userHoldingsPrices);
+
     const updateUserWatchList = (email) => {
         axios.get('http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/watchlist/' + email).then(res => {
             const watchlist = res.data.result.watchlist;
@@ -122,7 +124,7 @@ const Portfolio = () => {
                                 <HoldingsContainer userInfo={userInfo} holdings={userHoldings} holdingsPrices={userHoldingsPrices}/>
                             </Col>
                             <Col xs={3}>
-
+                                <PieChartComponent userInfo={userInfo} holdingsPrices={userHoldingsPrices}/>
                             </Col>
                         </Row>
                     </Tab>
