@@ -17,7 +17,7 @@ const WatchListContainer = (props) => {
 
     return (
         <>
-            <h2 className="mb-3 text-center border">Your Watchlist</h2>
+            <h2 className="mb-3 text-center border py-4">Your Watchlist</h2>
             <Table striped hover>
                 <thead>
                     <tr>

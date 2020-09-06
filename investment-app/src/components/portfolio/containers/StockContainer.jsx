@@ -65,7 +65,7 @@ const StockContainer = (props) => {
                                     </div>
                                     <div className="d-flex justify-content-between">
                                         <Card.Text>Estimated Cost</Card.Text>
-                                        <Card.Text>${props.price * Math.max(1, sharesBuyAmt)}</Card.Text>
+                                        <Card.Text>${(props.price * Math.max(1, sharesBuyAmt)).toFixed(2)}</Card.Text>
                                     </div>
                                     <Button block onClick={onBuyShares}>Buy Shares</Button>
                                 </Form>
@@ -105,7 +105,7 @@ const StockContainer = (props) => {
                                     </div>
                                     <div className="d-flex justify-content-between">
                                         <Card.Text>Estimated Cost</Card.Text>
-                                        <Card.Text>${props.price * Math.max(1, sharesSellAmt)}</Card.Text>
+                                        <Card.Text>${(props.price * Math.max(1, sharesSellAmt)).toFixed(2)}</Card.Text>
                                     </div>
                                     <Button block onClick={onSellShares}>Sell Shares</Button>
                                 </Form>
