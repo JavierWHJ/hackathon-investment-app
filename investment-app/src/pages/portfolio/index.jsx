@@ -64,7 +64,7 @@ const Portfolio = () => {
                                 <MarketChartComponent />
                             </Col>
                             <Col>
-                                <WatchListContainer watchlist={userWatchList} addUserWatchList={addUserWatchList}/>
+                                <WatchListContainer watchlist={userWatchList} email={email} addUserWatchList={addUserWatchList}/>
                             </Col>
                         </Row>
                         <MarketDataComponent />
