@@ -11,36 +11,39 @@ import HoldingsContainer from "../../components/portfolio/containers/HoldingsCon
 const Portfolio = () => {
 
     const email = Cookies.get('userEmail');
-    if(email != undefined){
+    if (email != undefined) {
         const userWatchList = axios.get('http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/watchlist/' + email).then(res => { });
         console.log(userWatchList)
     }
 
-  return (
-    <Layout>
-        <Container fluid>
-            <Tabs
-                defaultActiveKey="watchlist"
-                id="uncontrolled-tab-example"
-            >
-                <Tab eventKey="watchlist" title="Watchlist">
-                    <Row className="mt-3">
-                        <Col xs={8}>
-                            <MarketChartComponent />
-                        </Col>
+    return (
+        <Layout>
+            <Container fluid>
+                <Tabs
+                    defaultActiveKey="watchlist"
+                    id="uncontrolled-tab-example"
+                >
+                    <Tab eventKey="watchlist" title="Watchlist">
+                        <Row className="mt-3">
+                            <Col xs={8}>
+                                <MarketChartComponent />
+                            </Col>
+                            <Col>
+                                <WatchListContainer />
+                            </Col>
+                        </Row>
+                        <MarketDataComponent />
+                    </Tab>
+                    <Tab eventKey="holdings" title="Holdings">
                         <Col>
-                            <WatchListContainer />
+
+                            <HoldingsContainer />
                         </Col>
-                    </Row>
-                    <MarketDataComponent />
-                </Tab>
-                <Tab eventKey="holdings" title="Holdings">
-                    <HoldingsContainer />
-                </Tab>
-            </Tabs>
-        </Container>
-    </Layout>
-  );
+                    </Tab>
+                </Tabs>
+            </Container>
+        </Layout>
+    );
 };
 
 export default Portfolio;

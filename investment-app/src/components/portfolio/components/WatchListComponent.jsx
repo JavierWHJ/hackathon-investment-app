@@ -8,9 +8,7 @@ const WatchListComponent = (props) => {
         <tr key={props.stock.key} onClick={() => router.push("/portfolio/" + props.stock.key)} style={{ cursor: "pointer" }}>
             <td>{props.stock.key}</td>
             <td>{props.stock.price}</td>
-            <td>{props.stock.shares}</td>
-            <td>{props.stock.marketValue}</td>
-            <td>{props.stock.percentReturn}</td>
+            <td>Changes</td>
         </tr>
     );
 };
