@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Modal, Button, Tabs} from 'react-bootstrap'
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 const Loginmodal = () => {
     const [show, setShow] = useState(false);
@@ -25,10 +26,13 @@ const Loginmodal = () => {
             url: 'http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/user', 
             headers: {},
             data: { 
-                email:{emailfield},
-                name:{namefield},
+                email: emailfield,
+                name: namefield,
             }
-        }).then(res => console.log(res)).then(window.location.href = "http://localhost:3000/profile");
+        }).then(res => console.log(res)).then(() => {
+            Cookies.set('userEmail', emailfield);
+            window.location.href = "http://localhost:3000/profile";
+        });
     }
 
     const getLogin = async () => {
@@ -47,6 +51,7 @@ const Loginmodal = () => {
         } else {
             setEmailcheck(true);
             setShow(false);
+            Cookies.set('userEmail', emailfield);
         } 
             
     };
