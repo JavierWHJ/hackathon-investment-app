@@ -22,7 +22,6 @@ const Portfolio = () => {
         if (email != undefined) {
             updateUserWatchList(email);
             updateUserHoldings(email);
-            // updateHoldingsPrices();
         }
     }, [])
 
@@ -64,28 +63,24 @@ const Portfolio = () => {
     const updateUserHoldings = (email) => {
         axios.get('http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/user/' + email)
         .then(res => {
+            const holdings = res.data.result.holdings;
             setUserHoldings(res.data.result.holdings);
-            updateHoldingsPrices();
+            Promise.all(Object.keys(holdings).map((symbol) => {
+                return axios.get(
+                    "http://yfin-env.eba-m8jmyudi.ap-southeast-1.elasticbeanstalk.com/daily/" + symbol
+                ).then(res => {
+                    const symbolInfo = {
+                        symbol: symbol,
+                        price: res.data.current_price,
+                        percentage: res.data.percent_change
+                    }
+                    return symbolInfo
+                });
+            })).then(res => {
+                setUserHoldingsPrices(res);
+            })
         })
     }
-
-    const updateHoldingsPrices = () => {
-        Promise.all(Object.keys(userHoldings).map((symbol) => {
-            return axios.get(
-                "http://yfin-env.eba-m8jmyudi.ap-southeast-1.elasticbeanstalk.com/daily/" + symbol
-            ).then(res => {
-                const symbolInfo = {
-                    symbol: symbol,
-                    price: res.data.current_price,
-                    percentage: res.data.percent_change
-                }
-                return symbolInfo
-            });
-        })).then(res => {
-            setUserHoldingsPrices(res);
-        })
-    };
-    
 
     return (
         <Layout>
