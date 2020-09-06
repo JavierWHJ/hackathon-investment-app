@@ -27,11 +27,11 @@ const WatchListContainer = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {props.watchlist.map((stock) => {
+                    {props.watchlist.length > 0 ? props.watchlist.map((stock) => {
                         return (
                             <WatchListComponent key={stock} stock={stock} email={props.email} onDelete={props.deleteUserWatchList}/>
                         );
-                    })}
+                    }) : ''}
                 </tbody>
             </Table>
             <AddWatchListComponent show={show} symbol={symbol} onChange={setSymbol} handleAddStock={handleAddStock} handleClose={handleClose} />
