@@ -1,13 +1,21 @@
 import React from "react";
 import Layout from "../../components/common/Layout";
+import SearchComponent from '../../components/financials/components/SearchComponent'
 
 const Financials = () => {
 
     return (
         <Layout>
-            <div className="container mt-5 d-flex">
-                
+            <div class="container d-flex justify-content-center">
+                <div>
+                    <img
+                            src="/pear.svg"
+                            width="100"
+                            height="100"
+                    />
+                </div>
             </div>
+                <SearchComponent />
         </Layout>
     );
 }
