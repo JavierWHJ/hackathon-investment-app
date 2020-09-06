@@ -6,7 +6,7 @@ const Financials = () => {
 
     return (
         <Layout>
-            <div className="mx-5 mt-3">
+            <div className="mx-5 mt-3 p-3">
                 <div class="container d-flex justify-content-center" >
                     <div>
                         <img
@@ -17,7 +17,6 @@ const Financials = () => {
                     </div>
                 </div>
             </div>
-            <br></br>
                 <SearchComponent />
         </Layout>
     );
