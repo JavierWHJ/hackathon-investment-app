@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 
 const HoldingsComponent = (props) => {
     const router = useRouter();
-    const {stock, info} = props;
     const symbol = props.info.symbol;
     const avgPrice = props.info.avgPrice;
     const shares = props.info.shares;
