@@ -29,7 +29,7 @@ const WatchListContainer = (props) => {
                 <tbody>
                     {props.watchlist.map((stock) => {
                         return (
-                            <WatchListComponent key={stock} stock={stock} />
+                            <WatchListComponent key={stock} stock={stock} email={props.email} onDelete={props.deleteUserWatchList}/>
                         );
                     })}
                 </tbody>

@@ -54,6 +54,20 @@ const Portfolio = () => {
         });
     }
 
+    const deleteUserWatchList = (email, ticker) => {
+        const url = "http://flask-env.eba-za7sxm6n.ap-southeast-1.elasticbeanstalk.com/watchlist/" + ticker;
+        axios({
+            method: "delete",
+            url: url,
+            headers: {},
+            data: {
+                email: email
+            },
+        }).then(res => {
+            updateUserWatchList(email);
+        });
+    }
+
     return (
         <Layout>
             <Container fluid>
@@ -64,7 +78,7 @@ const Portfolio = () => {
                                 <MarketChartComponent />
                             </Col>
                             <Col>
-                                <WatchListContainer watchlist={userWatchList} email={email} addUserWatchList={addUserWatchList}/>
+                                <WatchListContainer watchlist={userWatchList} email={email} addUserWatchList={addUserWatchList} deleteUserWatchList={deleteUserWatchList}/>
                             </Col>
                         </Row>
                         <MarketDataComponent />
