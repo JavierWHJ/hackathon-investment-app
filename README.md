@@ -16,5 +16,8 @@ Pitch deck: https://smu-my.sharepoint.com/:p:/g/personal/huifen_ong_2018_busines
 Pitch video: https://drive.google.com/drive/folders/1dbNMhIU4uxOTzQr0MXkmE5LT5M8aOb_g
 
 
+
+
+
 Amazing Whack Services had a great time participating in this hackathon! 
 
