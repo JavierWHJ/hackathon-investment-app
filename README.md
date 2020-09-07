@@ -13,3 +13,8 @@ To check out an existing account: Click "Get started" and use the following cred
 
 Pitch deck: https://smu-my.sharepoint.com/:p:/g/personal/huifen_ong_2018_business_smu_edu_sg/EWwXjaHrNFJHjl2-ranjgfsBuP3k8Wa-Uihe83BCjwA-Vw?rtime=R4z_fhRT2Eg
 
+Pitch video: https://drive.google.com/drive/folders/1dbNMhIU4uxOTzQr0MXkmE5LT5M8aOb_g
+
+
+Amazing Whack Services had a great time participating in this hackathon! 
+
