@@ -14,6 +14,7 @@ import PieChartComponent from "../../components/portfolio/components/PieChartCom
 const Portfolio = () => {
     const email = Cookies.get('userEmail');
     const [userInfo, setUserInfo] = useState({});
+    const [userTransactions, setUserTransactions] = useState([]);
     const [userWatchList, setUserWatchList] = useState([]);
     const [userHoldings, setUserHoldings] = useState([]);
     const [userHoldingsPrices, setUserHoldingsPrices] = useState([]);
@@ -84,6 +85,7 @@ const Portfolio = () => {
         .then(res => {
             const holdings = res.data.result.holdings;
             setUserInfo(res.data.result);
+            setUserTransactions(res.data.result.transactions);
             setUserHoldings(res.data.result.holdings);
             // console.log(holdings);
             Promise.all(Object.keys(holdings).map((symbol) => {
@@ -130,7 +132,7 @@ const Portfolio = () => {
                     <Tab eventKey="holdings" title="Holdings">
                         <Row>
                             <Col xs={8}>
-                                <HoldingsContainer userInfo={userInfo} holdings={userHoldings} holdingsPrices={userHoldingsPrices} index={indexHistoricalData}/>
+                                <HoldingsContainer userInfo={userInfo} holdings={userHoldings} holdingsPrices={userHoldingsPrices} index={indexHistoricalData} transactions={userTransactions}/>
                             </Col>
                             <Col xs={3}>
                                 <PieChartComponent userInfo={userInfo} holdingsPrices={userHoldingsPrices}/>

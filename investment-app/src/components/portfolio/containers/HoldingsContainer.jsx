@@ -15,6 +15,7 @@ const HoldingsContainer = (props) => {
     return (
         <div className="mt-4 mx-5">
             <h2>{props.userInfo.name}</h2>
+            <p>{props.userInfo.email}</p>
             <Tabs defaultActiveKey="account" id="uncontrolled-tab-example">
                 <Tab eventKey="account" title="Account">
                     <h3 className="mt-4">${parseInt(portfolioValue).toLocaleString('en')}</h3>
@@ -40,8 +41,7 @@ const HoldingsContainer = (props) => {
                     <SummaryComponent info={props.userInfo} index={props.index}/>
                 </Tab>
                 <Tab eventKey="transactions" title="Transactions">
-                    <TransactionComponent transactions={props.userInfo.transactions} />
-                    
+                    <TransactionComponent transactions={props.transactions} />
                 </Tab>
             </Tabs>
         </div>
