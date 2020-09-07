@@ -47,7 +47,7 @@ def add_user():
     transactions = []
     watchlist = {}  # dont have to be list
     holdings = {}
-    cash = 100000000
+    cash = 100000
     user_id = user.insert({'name': name, 'email': email, "transactions" : transactions, "holdings" : holdings, "cash" : cash, "watchlist": watchlist})
     new_user = user.find_one({'_id': user_id })
     output = {'name' : new_user['name'], 'email' : new_user['email'], "transactions" : new_user["transactions"], "holdings" : new_user["holdings"], "cash" : new_user["cash"], 'watchlist': new_user['watchlist']}
