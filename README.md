@@ -11,7 +11,7 @@ To check out an existing account: Click "Get started" and use the following cred
 - Email: javier@gmail.com
 - Name: javier
 
-Pitch deck: https://smu-my.sharepoint.com/:p:/g/personal/huifen_ong_2018_business_smu_edu_sg/EWwXjaHrNFJHjl2-ranjgfsBuP3k8Wa-Uihe83BCjwA-Vw?rtime=R4z_fhRT2Eg
+Pitch deck: https://smu-my.sharepoint.com/:p:/g/personal/huifen_ong_2018_business_smu_edu_sg/EcAFYiy0VqhOqiTklSeEz6YBF67USEsafKhyMQxoVD1mYg?e=akEqcX
 
 Pitch video: https://drive.google.com/drive/folders/1dbNMhIU4uxOTzQr0MXkmE5LT5M8aOb_g
 
