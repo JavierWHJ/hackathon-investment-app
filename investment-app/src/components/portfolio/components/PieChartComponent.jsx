@@ -38,7 +38,7 @@ const PieChartComponent = (props) => {
 
     let insert = {
         color: randomColor,
-        title: "CASH" + "\n" + parseInt(cashPortfolioWeight).toLocaleString('en') + "%",
+        title: "CASH" + " " + parseInt(cashPortfolioWeight).toLocaleString('en') + "%",
         value: cashValue
     };
 
