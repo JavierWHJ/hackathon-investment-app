@@ -29,17 +29,17 @@ const SummaryComponent = (props) => {
             </tr>
             <tr>
                 <td>
-            <div className="m-2 text-center" style={{"font-size":"26px"}}>
+            <div className="m-2 text-center" style={{fontSize:"26px"}}>
                 ${parseInt(props.info.cash).toLocaleString('en')}
             </div>
             </td>
             <td>
-            <div className="m-2 text-center" style={{"font-size":"30px"}}>
+            <div className="m-2 text-center" style={{fontSize:"30px"}}>
                 +35%
             </div>
             </td>
             <td>
-            <div className="m-2 text-center" style={{"font-size":"30px"}}>
+            <div className="m-2 text-center" style={{fontSize:"30px"}}>
                 +10%
             </div>
             </td>
