@@ -172,14 +172,24 @@ const Articles = {
         ],
     },
     cash: {
-        title: "What is a Bond? A way to get income & stability ",
+        title: "Understanding Cash Flow Statement components ",
         preface:
-            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+            "",
         content: [
             {
-                header: "Bond terms to know ",
+                header: "Cash Flow from Operating",
                 body:
-                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+                    "Indicates the amount of money a company brings in or loses from its ongoing, regular business activities. ",
+            },
+            {
+                header: "Cash Flow from Investing ",
+                body:
+                    " Indicates the amount of money a company brings in or loses from its long-term investments. ",
+            },
+            {
+                header: "Cash Flow from Financing",
+                body:
+                    "Indicates the amount of money a company brings in or loses from funding the company (eg. Debts, equity and dividends). ",
             },
         ],
     },
@@ -220,38 +230,68 @@ const Articles = {
         ],
     },
     relative: {
-        title: "What is a Bond? A way to get income & stability ",
+        title: "Relative Valuation",
         preface:
-            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+            "",
         content: [
             {
-                header: "Bond terms to know ",
+                header: "What is relative valuation? ",
                 body:
-                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+                    "Relative valuation models exist to help compare a company's value to other peers and competitors.  Investors may use relative valuation models when determining whether a company's stock is a good buy. ",
+            },
+            {
+                header: "Types of relative valuation ",
+                body:
+                    "There are many different types of relative valuation ratios, such as price to free cash flow, enterprise value (EV), operating margin, price to cash flow for real estate and price-to-sales (P/S) for retail. One of the most popular relative valuation multiples is the price-to-earnings (P/E) ratio. It is calculated by dividing stock price by earnings per share (EPS), and is expressed as a company's share.",
+            },
+            {
+                header: "Learning the P/E valuation model ",
+                body:
+                    "Our previous lesson touched on the P/E ratio, which is the measure of how much you are paying for each dollar of earnings the company generates. By comparing the P/E ratios of companies in the same industry, we will be able to estimate which companies are cheap relative to its peers (low P/E ratio). This might signal a good buy. ",
             },
         ],
     },
     goal: {
-        title: "What is a GOAL? A way to get income & stability ",
+        title: "Goal Setting",
         preface:
-            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+            "",
         content: [
             {
-                header: "Bond terms to know ",
+                header: "Comparing your portfolio to an index ",
                 body:
-                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+                    "Sometimes it's hard to know how well your portfolio or financial adviser is performing. You might hear numbers like 3%, 5%, or 10% growth but what does that really mean? Are those good numbers? The answer is--it depends. ",
+            },
+            {
+                header: "",
+                body:
+                    "Some years the investment markets have a great year and go up by double-digit percentages. Other years, those same markets might have a year of 1% growth or even declines. You should measure the performance of your portfolio or financial adviser against an index. You might compare your stock portfolio to the S&P 500. If that index rose 9% in a certain year, you might expect your stock portfolio to rise 6% or more. (Most portfolios are a little more conservative than the index and there are some fees involved.)",
+            },
+            {
+                header: "",
+                body:
+                    "If your portfolio outperforms the index, congratulations, but if your portfolio consistently underperforms the index by a large margin, ask some questions. Every portfolio will have years where they outperform or severely underperform an index. You should only be worried if it underperforms over multiple years. ",
+            },
+            {
+                header: "",
+                body:
+                    "Don't just look at the percentage gain or loss as a measure of performance. The only way to truly gauge the performance of your portfolio is to compare it against the correct index. ",
             },
         ],
     },
     diversification: {
-        title: "What is a Bond? A way to get income & stability ",
+        title: "What is diversification? ",
         preface:
-            "Unlike stocks, bonds don't give you ownership rights. They represent a loan from the buyer (you) to the issuer of the bond. ",
+            "Diversification is the practice of spreading your investments around so that your exposure to any one type of asset is limited. For eg, stocks in the same country, or in the same industry tend to experience similar market trends, which in turn affects their price. By spreading out your investments into different assets, we are able to reduce the volatility of our portfolios.",
         content: [
             {
-                header: "Bond terms to know ",
+                header: "Some Diversification Tips ",
                 body:
-                    "The language of bonds can be a little confusing, and the terms that are important to know will depend on whether you're buying bonds when they're issued and holding them to maturity, or buying and selling them on the secondary market. ",
+                    "There are no hard and fast diversification rules. For a start, it is a good idea to consider the various different asset classes that we have talked about throughout Academy.",
+            },
+            {
+                header: "A well diversified portfolio could include: ",
+                body:
+                    "exchange-traded funds (ETFs) that trades based off an underlying index, real estate investment trust (REIT) that are similar to funds which pool capital from numerous investors to buy and manage properties as well as Government bonds and publicly traded stocks that we have covered earlier in Academy. ",
             },
         ],
     },
