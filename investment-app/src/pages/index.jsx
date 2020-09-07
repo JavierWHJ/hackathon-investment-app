@@ -31,7 +31,7 @@ const Home = (props) => {
           <div className={styles.main_title}>Want to learn how to invest?</div>
 
           <div className={styles.grid}>
-            <Loginmodal button={"Are y'all ready kids?"} />
+            <Loginmodal button={"Get Started"} />
           </div>
         </div>
       </div>
